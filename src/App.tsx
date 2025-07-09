@@ -1,10 +1,9 @@
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import {Test} from "@app/components/test";
-import {Header} from "@app/components/Header/Header";
-import './App.css'
-import {Navigation} from "@app/components/Header/components/Navigation";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Header } from "@app/components/Header/Header";
+import './compiled/css/index.css'
+import { Navigation } from "@app/components/Header/components/Navigation";
 import React from "react";
-import {useActiveSection} from "@hooks/useActiveSection";
+import { useActiveSection } from "@hooks/useActiveSection";
 
 function App() {
 	const queryClient = new QueryClient();
@@ -32,7 +31,7 @@ function App() {
 				</div>
 			</div>
 			<QueryClientProvider client={queryClient}>
-				<Test />
+				{/*<Test />*/}
 			</QueryClientProvider>
 		</>
 	);

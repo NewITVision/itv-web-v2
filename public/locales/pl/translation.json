@@ -1,0 +1,14 @@
+{
+	"navigation": {
+		"btt": "Wróć do góry",
+		"about": "O nas",
+		"offer": "Oferta",
+		"projects": "Projekty"
+	},
+	"social": {
+		"discord": "Discord",
+		"github": "Github",
+		"facebook": "Facebook",
+		"email": "E-mail"
+	}
+}
