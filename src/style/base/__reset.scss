@@ -20,8 +20,8 @@
 }
 
 ::selection {
-	color: rgba( var(--selection), 1 );
-	background-color: rgba( var(--selection), 0.1 );
+	color: var(--body-background);
+	background-color: #89bfff;
 }
 
 html {
@@ -63,7 +63,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 p {
 	white-space: break-spaces;
-	word-break: break-all;
 }
 
 a, a:active, a:visited, a:link {

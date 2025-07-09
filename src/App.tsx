@@ -4,21 +4,26 @@ import './compiled/css/index.css'
 import { Navigation } from "@app/components/Header/components/Navigation";
 import React from "react";
 import { useActiveSection } from "@hooks/useActiveSection";
+import { useTranslation } from "react-i18next";
 
 function App() {
 	const queryClient = new QueryClient();
 	const { activeSection, refs } = useActiveSection();
+	const { t } = useTranslation();
 
 	return (
 		<>
 			<div className="container">
 				<Header />
 
-				<div>
-					<Navigation activeSection={activeSection} />
+				<main>
+					{/*<Navigation activeSection={activeSection} />*/}
 
 					<section id="about" ref={refs.aboutRef} style={{ height: '100vh' }}>
-						about
+						<h1>{t('hero.title')}</h1>
+						<p>
+							{t('hero.content')}
+						</p>
 					</section>
 
 					<section id="offer" ref={refs.offerRef} style={{ height: '100vh' }}>
@@ -28,7 +33,9 @@ function App() {
 					<section id="projects" ref={refs.projectsRef} style={{ height: '100vh' }}>
 						projects
 					</section>
-				</div>
+				</main>
+
+				<footer></footer>
 			</div>
 			<QueryClientProvider client={queryClient}>
 				{/*<Test />*/}

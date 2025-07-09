@@ -16,8 +16,9 @@ $spacing-map: (
 );
 
 $brand-colors: (
-	'primary-color': #8D50BB,
-	'link-hover-color': #2056A2,
+	'primary-color': #3886d3,
+	'link-hover-color': #3886d3,
+	'light-color': #c5deff
 );
 
 :root {
@@ -46,6 +47,6 @@ $brand-colors: (
 	--font-weight-semibold: 600;
 	--font-weight-bold: 700;
 
-	--body-background: #16191c;
+	--body-background: #091018;
 	--body-color: #fafafa;
 }

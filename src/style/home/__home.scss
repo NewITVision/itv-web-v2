@@ -1,0 +1,43 @@
+@use '../abstracts/__mixins' as mx;
+
+header {
+	flex: 0 0 340px;
+	@include mx.flex(column, space-between, flex-start);
+	position: sticky;
+	top: var(--sp-5);
+	height: calc( 100vh - var(--sp-7) - var(--sp-7));
+	text-align: center;
+
+	.logo {
+		display: inline-block;
+		margin-inline: auto;
+		text-align: center;
+		margin-bottom: var(--sp-4);
+		user-select: none;
+		transition: opacity 0.2s linear;
+
+		&:hover {
+			opacity: 0.65;
+		}
+	}
+
+	p {
+		color: rgba( var(--light-color-rgb), 0.75 );
+		margin-bottom: var(--sp-4);
+	}
+}
+
+main {
+	h1 {
+		font-size: var(--font-size-3xl);
+		font-weight: var(--font-weight-bold);
+		text-transform: uppercase;
+		margin-bottom: var(--sp-2);
+	}
+
+	p {
+		font-size: var(--font-size-xl);
+		font-weight: var(--font-weight-medium);
+		color: rgba( var(--light-color-rgb), 0.85 );
+	}
+}

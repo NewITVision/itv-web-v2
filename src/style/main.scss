@@ -7,10 +7,79 @@
 @use 'abstracts/__variables';
 
 @use 'base/__reset';
+@use 'home/__home';
 
 .container {
-	max-width: 1024px;
-	min-width: 1024px;
-	margin: var(--sp-0) auto;
+	max-width: 1280px;
+	min-width: 1280px;
+	margin-inline: auto;
 	position: relative;
+	padding: var(--sp-8) var(--sp-9);
+	@include mx.flex($align: flex-start, $gap: var(--sp-10));
+
+	&::after,
+	&::before {
+		content: '';
+		position: fixed;
+		top: -100px;
+		left: -100px;
+		width: 32rem;
+		height: 32rem;
+		background-color: var(--primary-color);
+		filter: blur(100px);
+		opacity: 0.15;
+		z-index: -1;
+		border-radius: 50%;
+		animation: move 15s cubic-bezier(0.3, 0, 1, 1) infinite;
+	}
+
+	&::before {
+		left: unset;
+		right: -200px;
+		animation: move-2 18s cubic-bezier(0.3, 0, 1, 1) infinite;
+	}
+}
+
+@keyframes move {
+	0% {
+		transform: translateX(20%) translateY(20%);
+	}
+
+	25% {
+		transform: translateX(30%) translateY(40%);
+	}
+
+	50% {
+		transform: translateX(25%) translateY(65%);
+	}
+
+	75% {
+		transform: translateX(15%) translateY(40%);
+	}
+
+	to {
+		transform: translateX(20%) translateY(20%);
+	}
+}
+
+@keyframes move-2 {
+	0% {
+		transform: translateX(-20%) translateY(20%);
+	}
+
+	25% {
+		transform: translateX(-5%) translateY(40%);
+	}
+
+	50% {
+		transform: translateX(-35%) translateY(65%);
+	}
+
+	75% {
+		transform: translateX(-10%) translateY(40%);
+	}
+
+	to {
+		transform: translateX(-20%) translateY(20%);
+	}
 }

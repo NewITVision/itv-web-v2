@@ -16,14 +16,18 @@ i18n
 
 		backend: {
 			loadPath: '/locales/{{lng}}/{{ns}}.json',
+			// requestOptions: {
+			// 	cache: 'no-cache'
+			// }
 		},
 
 		detection: {
 			order: ['localStorage', 'navigator', 'htmlTag'],
 			caches: ['localStorage'],
-			lookupLocalStorage: 'i18nextLng',
-			checkWhitelist: true,
+			lookupLocalStorage: 'i18nextLng'
 		},
+
+		initImmediate: false,
 	});
 
 export default i18n;
