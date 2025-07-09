@@ -1,0 +1,16 @@
+@use 'sass:math';
+@use 'sass:map';
+
+@use 'abstracts/__breakpoints' as bp;
+@use 'abstracts/__functions' as fn;
+@use 'abstracts/__mixins' as mx;
+@use 'abstracts/__variables';
+
+@use 'base/__reset';
+
+.container {
+	max-width: 1024px;
+	min-width: 1024px;
+	margin: var(--sp-0) auto;
+	position: relative;
+}

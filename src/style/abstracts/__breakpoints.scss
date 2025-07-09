@@ -1,0 +1,47 @@
+@use 'sass:map';
+
+$breakpoints: (
+	'mobile': 550px,
+	'tablet': 979px,
+	'desktop-sm': 1156px,
+	'desktop': 1360px,
+	'desktop-md': 1440px,
+	'desktop-lg': 1600px,
+	'desktop-xlg': 1800px,
+	'desktop-xl': 1920px,
+	'desktop-2xl': 2560px
+);
+
+@mixin respond-to($breakpoint) {
+	@if map.has-key($breakpoints, $breakpoint) {
+		@media screen and (max-width: map.get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+	@else {
+		@error 'Unknown breakpoint: #{$breakpoint}';
+	}
+}
+
+@mixin respond-from($breakpoint) {
+	@if map.has-key($breakpoints, $breakpoint) {
+		@media screen and (min-width: map.get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+
+	@else {
+		@error 'Unknown breakpoint: #{$breakpoint}';
+	}
+}
+
+@mixin respond-between($min-breakpoint, $max-breakpoint) {
+	@if map.has-key($breakpoints, $min-breakpoint) and map.has-key($breakpoints, $max-breakpoint) {
+		@media screen and (min-width: map.get($breakpoints, $min-breakpoint)) and (max-width: map.get($breakpoints, $max-breakpoint)) {
+			@content;
+		}
+	}
+	@else {
+		@error 'Unknown breakpoint: #{$min-breakpoint} or #{$max-breakpoint}';
+	}
+}

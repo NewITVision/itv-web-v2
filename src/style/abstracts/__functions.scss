@@ -1,0 +1,38 @@
+@use 'sass:math';
+@use 'sass:color';
+@use 'sass:meta';
+
+@function color-to-rgb($color) {
+	@return '#{color.channel($color, "red")}, #{color.channel($color, "green")}, #{color.channel($color, "blue")}';
+}
+
+@function rgb-to-color($r, $g, $b) {
+	@return rgb($r, $g, $b);
+}
+
+@function fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+	$u1: math.unit($min-vw);
+	$u2: math.unit($max-vw);
+	$u3: math.unit($min-font-size);
+	$u4: math.unit($max-font-size);
+
+	@if $u1 ==$u2 and $u1 ==$u3 and $u1 ==$u4 {
+		$min-vw: math.div($min-vw, 1px);
+		$max-vw: math.div($max-vw, 1px);
+		$min-font-size: math.div($min-font-size, 1px);
+		$max-font-size: math.div($max-font-size, 1px);
+
+		$slope: math.div($max-font-size - $min-font-size, $max-vw - $min-vw);
+		$y-axis-intersection: -1 * $min-vw * $slope + $min-font-size;
+
+		@return calc(#{$y-axis-intersection}px + #{$slope} * 100vw);
+	}
+}
+
+@function hex-to-rgb($hex) {
+	$red: color.channel($hex, "red", $space: rgb);
+	$green: color.channel($hex, "green", $space: rgb);
+	$blue: color.channel($hex, "blue", $space: rgb);
+
+	@return '#{$red}, #{$green}, #{$blue}';
+}

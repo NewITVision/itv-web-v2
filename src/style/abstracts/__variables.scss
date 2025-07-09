@@ -1,0 +1,51 @@
+@use '__functions' as fn;
+@use 'sass:map';
+
+$spacing-map: (
+	0: 0,
+	1: 6,
+	2: 12,
+	3: 18,
+	4: 24,
+	5: 30,
+	6: 36,
+	7: 42,
+	8: 48,
+	9: 54,
+	10: 60
+);
+
+$brand-colors: (
+	'primary-color': #8D50BB,
+	'link-hover-color': #2056A2,
+);
+
+:root {
+	@each $key, $value in $spacing-map {
+		--sp-#{$key}: #{$value}px;
+	}
+
+	@each $name, $color in $brand-colors {
+		--#{$name}: #{$color};
+		--#{$name}-rgb: #{fn.hex-to-rgb($color)};
+	}
+
+	--font-family-base: "Figtree", "Inter", "Segoe UI", Tahoma, Geneva, Verdana;
+	--font-size-xs: #{fn.fluid-type(320px, 1920px, 12px, 12px)};
+	--font-size-sm: #{fn.fluid-type(320px, 1920px, 13px, 14px)};
+	--font-size-base: #{fn.fluid-type(320px, 1920px, 14px, 15px)};
+	--font-size-lg: #{fn.fluid-type(320px, 1920px, 15px, 15px)};
+	--font-size-xl: #{fn.fluid-type(320px, 1920px, 16px, 17px)};
+	--font-size-2xl: #{fn.fluid-type(320px, 1920px, 24px, 27px)};
+	--font-size-3xl: #{fn.fluid-type(320px, 1920px, 26px, 36px)};
+	--font-size-4xl: #{fn.fluid-type(320px, 1920px, 36px, 64px)};
+	--font-size-5xl: #{fn.fluid-type(320px, 1920px, 44px, 72px)};
+
+	--font-weight-normal: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+
+	--body-background: #16191c;
+	--body-color: #fafafa;
+}
