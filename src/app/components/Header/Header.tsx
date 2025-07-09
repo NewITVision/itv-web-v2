@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
 import {useLocalStorage} from "@hooks/useLocalStorage";
+import {Navigation} from "@app/components/Header/components/Navigation";
+import {SocialMedia} from "@app/components/Header/components/SocialMedia";
 
 export const Header: React.FC = () => {
 	const [theme, setTheme] = useLocalStorage("theme", "dark");
@@ -14,9 +16,11 @@ export const Header: React.FC = () => {
 
 	return (
 		<header>
-			<button onClick={toggleTheme}>Zmień motyw</button>
+			<img src="./images/logo.png" alt="Logo NewITVision.pl" width={128} height={128} loading="lazy" />
 
-			<img src="./images/logo.png" alt="Logo NewITVision.pl" width={128} height={128}/>
+			<SocialMedia />
+
+
 		</header>
 	)
 }
