@@ -13,7 +13,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
 
 	return (
 		<>
-			<ul style={{ position: 'fixed', top: 0, left: 0 }}>
+			<ul className="nav">
 				<li>
 					<a href="#" title={t('navigation.btt')}>
 						<ArrowUp />

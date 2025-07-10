@@ -13,7 +13,7 @@
 	},
 	"hero": {
 		"title": "Who are we?",
-		"content": "We create modern and refined websites that combine aesthetics with high performance. We pay attention to every detail to ensure your site runs fast and looks great on every device. Additionally, we handle VPS and dedicated server configuration and security, providing stability and protection against threats. We also offer comprehensive support for Counter Strike 1.6 servers — from AMXX configuration through plugin development to performance optimization.",
+		"content": "We create modern and refined websites that combine aesthetics with high performance. We pay attention to every detail to ensure your site runs fast and looks great on every device. Additionally, we handle VPS and dedicated server configuration and security, providing stability and protection against threats.",
 		"logo_desc": "Front-end, infrastructure, security. Everything you need, in one place."
 	}
 }

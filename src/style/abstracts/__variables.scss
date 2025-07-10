@@ -21,6 +21,10 @@ $brand-colors: (
 	'light-color': #c5deff
 );
 
+$light-colors: (
+	'light-color': #c5deff
+);
+
 :root {
 	@each $key, $value in $spacing-map {
 		--sp-#{$key}: #{$value}px;
@@ -30,6 +34,9 @@ $brand-colors: (
 		--#{$name}: #{$color};
 		--#{$name}-rgb: #{fn.hex-to-rgb($color)};
 	}
+
+	--body-background: #091018;
+	--body-color: #fafafa;
 
 	--font-family-base: "Figtree", "Inter", "Segoe UI", Tahoma, Geneva, Verdana;
 	--font-size-xs: #{fn.fluid-type(320px, 1920px, 12px, 12px)};
@@ -46,7 +53,14 @@ $brand-colors: (
 	--font-weight-medium: 500;
 	--font-weight-semibold: 600;
 	--font-weight-bold: 700;
+}
 
+[data-theme='light'] {
 	--body-background: #091018;
 	--body-color: #fafafa;
+
+	@each $name, $color in $light-colors {
+		--#{$name}: #{$color};
+		--#{$name}-rgb: #{fn.hex-to-rgb($color)};
+	}
 }

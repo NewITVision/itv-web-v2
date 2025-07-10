@@ -7,6 +7,8 @@
 @use 'abstracts/__variables';
 
 @use 'base/__reset';
+@use 'components/__loading';
+
 @use 'home/__home';
 
 .container {

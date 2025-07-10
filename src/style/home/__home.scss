@@ -25,9 +25,71 @@ header {
 		color: rgba( var(--light-color-rgb), 0.75 );
 		margin-bottom: var(--sp-4);
 	}
+
+	.theme {
+		@include mx.flex(row, space-around, center, $gap: var(--sp-3));
+
+		ul {
+			@include mx.list-reset;
+			@include mx.flex(row, center, center, $gap: var(--sp-3));
+
+			li {
+				color: rgba( var(--light-color-rgb), 0.75 );
+				transition: color 0.2s linear;
+
+				&:hover {
+					color: var(--body-color);
+					cursor: pointer;
+				}
+
+				&.active {
+					color: var(--link-hover-color);
+				}
+			}
+		}
+	}
+
+	ul.language__switcher {
+		li {
+			transform: scale(0.8);
+			transition: transform 0.2s linear;
+
+			&.active {
+				transform: scale(1);
+			}
+
+			img {
+				user-select: none;
+			}
+		}
+	}
+
+	.social-media {
+		width: 100%;
+		@include mx.list-reset;
+		@include mx.flex(row, center, center, $gap: var(--sp-3));
+
+		li {
+			a {
+				color: rgba( var(--light-color-rgb), 0.75 );
+
+				svg {
+					width: 24px;
+					height: 100%;
+					vertical-align: middle;
+				}
+
+				&:hover {
+					color: var(--body-color);
+				}
+			}
+		}
+	}
 }
 
 main {
+	@include mx.flex(column, flex-start, flex-start, $gap: var(--sp-6));
+
 	h1 {
 		font-size: var(--font-size-3xl);
 		font-weight: var(--font-weight-bold);
@@ -39,5 +101,41 @@ main {
 		font-size: var(--font-size-xl);
 		font-weight: var(--font-weight-medium);
 		color: rgba( var(--light-color-rgb), 0.85 );
+	}
+
+	.nav {
+		background-color: rgba(255, 255, 255, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		backdrop-filter: blur(10px);
+		border-radius: var(--sp-10);
+		position: fixed;
+		bottom: var(--sp-10);
+		left: 50%;
+		transform: translateX(-50%);
+		@include mx.flex(row, center, center, $gap: var(--sp-1));
+		@include mx.list-reset;
+		padding: var(--sp-1);
+
+		li {
+			a {
+				display: block;
+				text-align: center;
+				text-transform: uppercase;
+				font-size: var(--font-size-lg);
+				font-weight: var(--font-weight-semibold);
+				border-radius: var(--sp-10);
+				padding: var(--sp-1) var(--sp-2);
+				transition: all 0.2s linear;
+
+				svg {
+					vertical-align: middle;
+				}
+			}
+		}
+
+		.active {
+			background-color: var(--body-color);
+			color: var(--body-background);
+		}
 	}
 }
