@@ -15,5 +15,14 @@
 		"title": "Kim jesteśmy?",
 		"content": "Tworzymy nowoczesne i dopracowane strony internetowe, które łączą estetykę z wydajnością. Każdy projekt traktujemy indywidualnie – zależy nam, żeby Twoja strona nie tylko wyglądała świetnie, ale też działała szybko i bez problemów na każdym urządzeniu. Zwracamy uwagę na szczegóły – od przejrzystego układu, przez dobre wrażenia użytkownika, po szybkie ładowanie i gotowość pod SEO. Nie ma u nas przypadkowych rozwiązań – wszystko jest przemyślane i dopasowane do Twoich potrzeb. Poza stronami ogarniamy też konfigurację i administrację serwerów VPS oraz dedykowanych. Ustawiamy wszystko tak, żeby działało stabilnie, bezpiecznie i bez konieczności grzebania w terminalu za każdym razem, gdy coś pójdzie nie tak. Robimy również boty i serwery Discord.",
 		"logo_desc": "Front-end, infrastruktura, bezpieczeństwo. Wszystko czego potrzebujesz, w jednym miejscu."
+	},
+	"offer": {
+		"title": "Oferta",
+
+		"offer_themes_title": "Kodowanie motywów dla IPS 4 i MyBB",
+		"offer_themes_content": "Zajmujemy się kodowaniem i projektowaniem minimalistycznych motywów dla for opartych na IPS 4 lub MyBB. Jeśli chcesz odświeżyć wygląd swojej społeczności lub postawić coś od zera, dostarczymy Ci lekki, estetyczny i funkcjonalny motyw dopasowany do Twoich potrzeb. Nasze motywy to nie tylko ładny wygląd — stawiamy na szybkość działania, przejrzystość i wygodę użytkowników. Dbamy o każdy etap: od czystego kodu, przez responsywność, po pełną integrację z forum.",
+
+		"offer_web_title": "Tworzenie stron internetowych",
+		"offer_web_content": "Zajmujemy się tworzeniem nowoczesnych, responsywnych stron internetowych z naciskiem na front-end. Projektujemy i kodujemy interfejsy, które nie tylko dobrze wyglądają, ale też są szybkie, czytelne i wygodne w obsłudze. Niezależnie od tego, czy potrzebujesz klasycznej strony internetowej, interaktywnej aplikacji webowej czy rozbudowanego UI — mamy doświadczenie i umiejętności, by zamienić Twoją wizję w funkcjonalny projekt. Stawiamy na nowoczesny design, płynne animacje i dopracowane detale, które robią różnicę. Twój pomysł — nasz kod. Prosto, sprawnie i z estetyką na pierwszym miejscu."
 	}
 }

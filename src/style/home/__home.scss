@@ -5,8 +5,12 @@ header {
 	@include mx.flex(column, space-between, flex-start);
 	position: sticky;
 	top: var(--sp-5);
-	height: calc( 100vh - var(--sp-7) - var(--sp-7));
+	height: calc(100vh - var(--sp-7) - var(--sp-7));
 	text-align: center;
+
+	& > div {
+		width: 100%;
+	}
 
 	.logo {
 		display: inline-block;
@@ -22,7 +26,7 @@ header {
 	}
 
 	p {
-		color: rgba( var(--light-color-rgb), 0.75 );
+		color: rgba(var(--light-color-rgb), 0.75);
 		margin-bottom: var(--sp-4);
 	}
 
@@ -34,7 +38,7 @@ header {
 			@include mx.flex(row, center, center, $gap: var(--sp-3));
 
 			li {
-				color: rgba( var(--light-color-rgb), 0.75 );
+				color: rgba(var(--light-color-rgb), 0.75);
 				transition: color 0.2s linear;
 
 				&:hover {
@@ -71,7 +75,7 @@ header {
 
 		li {
 			a {
-				color: rgba( var(--light-color-rgb), 0.75 );
+				color: rgba(var(--light-color-rgb), 0.75);
 
 				svg {
 					width: 24px;
@@ -90,6 +94,18 @@ header {
 main {
 	@include mx.flex(column, flex-start, flex-start, $gap: var(--sp-6));
 
+	section {
+		width: 100%;
+		position: relative;
+
+		h2 {
+			font-size: var(--font-size-2xl);
+			font-weight: var(--font-weight-bold);
+			text-transform: uppercase;
+			margin-bottom: var(--sp-2);
+		}
+	}
+
 	h1 {
 		font-size: var(--font-size-3xl);
 		font-weight: var(--font-weight-bold);
@@ -100,7 +116,132 @@ main {
 	p {
 		font-size: var(--font-size-xl);
 		font-weight: var(--font-weight-medium);
-		color: rgba( var(--light-color-rgb), 0.85 );
+		color: rgba(var(--light-color-rgb), 0.85);
+	}
+
+	.offer-cards {
+		position: relative;
+		z-index: 22;
+		user-select: none;
+
+		&:hover {
+			.offer-card__item {
+				opacity: 0.5;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.offer-card__item {
+			user-select: none;
+			background: var(--offer-card-background);
+			border: 1px solid rgba(141, 149, 184, 0.2);
+			border-radius: var(--sp-1);
+			margin-bottom: var(--sp-2);
+			padding: var(--sp-3);
+			text-align: left;
+			text-decoration: none;
+			transition: all 0.3s ease;
+			backdrop-filter: blur(10px);
+			position: relative;
+			@include mx.flex(column, center, flex-start);
+			height: 100%;
+			--glow-x: 50%;
+			--glow-y: 50%;
+			--glow-intensity: 0;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background: linear-gradient(90deg, transparent, rgba(163, 148, 184, 0.3), transparent);
+				transition: opacity 0.3s ease;
+				opacity: 0;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				padding: 1px;
+				background: radial-gradient(
+						200px circle at var(--glow-x) var(--glow-y),
+						rgba(56, 116, 255, calc(var(--glow-intensity) * 0.8)) 0%,
+						rgba(56, 116, 255, calc(var(--glow-intensity) * 0.4)) 30%,
+						transparent 60%
+				);
+				border-radius: inherit;
+				mask:
+					linear-gradient(#fff 0 0) content-box,
+					linear-gradient(#fff 0 0);
+				mask-composite: subtract;
+				-webkit-mask:
+					linear-gradient(#fff 0 0) content-box,
+					linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				pointer-events: none;
+				transition: opacity 0.3s ease;
+			}
+
+			&:hover::before {
+				opacity: 1;
+			}
+
+			&.particle-container {
+				position: relative;
+				overflow: hidden;
+			}
+
+			.particle {
+				position: absolute;
+				width: 4px;
+				height: 4px;
+				background: rgba(56, 116, 255, 0.8);
+				border-radius: 50%;
+				pointer-events: none;
+				z-index: 100;
+				box-shadow: 0 0 6px rgba(56, 116, 255, 0.6);
+			}
+
+			.particle::before {
+				content: '';
+				position: absolute;
+				top: -2px;
+				left: -2px;
+				right: -2px;
+				bottom: -2px;
+				background: rgba(56, 116, 255, 0.3);
+				border-radius: 50%;
+				z-index: -1;
+			}
+
+			&-title {
+				font-size: var(--font-size-xl);
+				font-weight: var(--font-weight-bold);
+				color: var(--body-color);
+				text-align: center;
+				text-transform: uppercase;
+				display: inline-block;
+				white-space: nowrap;
+				margin-bottom: var(--sp-1);
+			}
+
+			p {
+				color: rgba( var(--light-color-rgb), 0.9 );
+				font-size: var(--fotn-size-sm);
+				text-align: left;
+				max-width: 100%;
+			}
+
+			&:last-child {
+				margin-bottom: var(--sp-0);
+			}
+		}
 	}
 
 	.nav {
@@ -115,6 +256,7 @@ main {
 		@include mx.flex(row, center, center, $gap: var(--sp-1));
 		@include mx.list-reset;
 		padding: var(--sp-1);
+		z-index: 100;
 
 		li {
 			a {
@@ -124,11 +266,17 @@ main {
 				font-size: var(--font-size-lg);
 				font-weight: var(--font-weight-semibold);
 				border-radius: var(--sp-10);
-				padding: var(--sp-1) var(--sp-2);
+				padding: var(--sp-1) var(--sp-3);
 				transition: all 0.2s linear;
 
 				svg {
 					vertical-align: middle;
+				}
+			}
+
+			&:first-child {
+				a {
+					padding: var(--sp-1) var(--sp-2);
 				}
 			}
 		}
@@ -138,4 +286,11 @@ main {
 			color: var(--body-background);
 		}
 	}
+}
+
+.global-spotlight {
+	mix-blend-mode: screen;
+	will-change: transform, opacity;
+	z-index: 200 !important;
+	pointer-events: none;
 }

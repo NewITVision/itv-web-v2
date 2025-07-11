@@ -1,6 +1,6 @@
-import { HeaderItem } from "../types/Header";
+import { HeaderItem } from '../types/Header';
 import { Github, Facebook, Mail } from 'lucide-react';
-import { Discord } from "@icons/Icons";
+import { Discord } from '@icons/Icons';
 import { useTranslation } from 'react-i18next';
 
 export const NavigationItems = () => {
@@ -18,7 +18,7 @@ export const NavigationItems = () => {
 		{
 			title: t('navigation.projects'),
 			path: '#projects',
-		}
+		},
 	];
 
 	const socialItems: HeaderItem[] = [
@@ -41,7 +41,7 @@ export const NavigationItems = () => {
 			icon: <Mail />,
 			title: t('social.email'),
 			path: 'mailto:contact@newitvision.pl',
-		}
+		},
 	];
 
 	return { navItems, socialItems };

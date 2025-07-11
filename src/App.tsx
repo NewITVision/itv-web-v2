@@ -1,15 +1,14 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Header } from "@app/components/Header/Header";
-import { Navigation } from "@app/components/Header/components/Navigation";
-import React from "react";
-import { useActiveSection } from "@hooks/useActiveSection";
-import { About } from "@app/components/Sections/About/About";
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Header } from '@app/components/Header/Header';
+import { Navigation } from '@app/components/Header/components/Navigation';
+import React from 'react';
+import { useActiveSection } from '@hooks/useActiveSection';
+import { About } from '@app/components/Sections/About/About';
+import { Projects } from '@app/components/Sections/Projects/Projects';
+import { Offer } from '@app/components/Sections/Offer/Offer';
 import './compiled/css/index.css';
-import { Projects } from "@app/components/Sections/Projects/Projects";
 
 function App() {
-	const queryClient = new QueryClient();
 	const { activeSection, refs } = useActiveSection();
 
 	return (
@@ -24,14 +23,12 @@ function App() {
 						<About />
 					</section>
 
-					<QueryClientProvider client={queryClient}>
-						<section id="offer" ref={refs.offerRef} style={{ height: '100vh' }}>
-							<Projects />
-						</section>
-					</QueryClientProvider>
+					<section id="offer" ref={refs.offerRef}>
+						<Offer />
+					</section>
 
 					<section id="projects" ref={refs.projectsRef} style={{ height: '100vh' }}>
-						projects
+						<Projects />
 					</section>
 				</main>
 

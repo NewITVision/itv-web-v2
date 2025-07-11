@@ -12,17 +12,18 @@ $spacing-map: (
 	7: 42,
 	8: 48,
 	9: 54,
-	10: 60
+	10: 60,
 );
 
 $brand-colors: (
 	'primary-color': #3886d3,
 	'link-hover-color': #3886d3,
-	'light-color': #c5deff
+	'light-color': #c5deff,
+	'offer-card-background': #0b141e
 );
 
 $light-colors: (
-	'light-color': #c5deff
+	'light-color': #c5deff,
 );
 
 :root {
@@ -38,7 +39,7 @@ $light-colors: (
 	--body-background: #091018;
 	--body-color: #fafafa;
 
-	--font-family-base: "Figtree", "Inter", "Segoe UI", Tahoma, Geneva, Verdana;
+	--font-family-base: 'Figtree', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana;
 	--font-size-xs: #{fn.fluid-type(320px, 1920px, 12px, 12px)};
 	--font-size-sm: #{fn.fluid-type(320px, 1920px, 13px, 14px)};
 	--font-size-base: #{fn.fluid-type(320px, 1920px, 14px, 15px)};

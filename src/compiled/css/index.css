@@ -16,6 +16,8 @@
   --link-hover-color-rgb: 56, 134, 211;
   --light-color: #c5deff;
   --light-color-rgb: 197, 222, 255;
+  --offer-card-background: #0b141e;
+  --offer-card-background-rgb: 11, 20, 30;
   --body-background: #091018;
   --body-color: #fafafa;
   --font-family-base: "Figtree", "Inter", "Segoe UI", Tahoma, Geneva, Verdana;
@@ -93,7 +95,13 @@ body {
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: var(--sp-0);
   padding: var(--sp-0);
   font-size: inherit;
@@ -106,16 +114,25 @@ p {
   white-space: break-spaces;
 }
 
-a, a:active, a:visited, a:link {
+a,
+a:active,
+a:visited,
+a:link {
   color: var(--body-color);
   text-decoration: none;
   transition: color 0.2s linear;
 }
-a:hover, a:active:hover, a:visited:hover, a:link:hover {
+a:hover,
+a:active:hover,
+a:visited:hover,
+a:link:hover {
   color: var(--primary-color);
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
   color: inherit;
 }
@@ -185,6 +202,39 @@ img {
   vertical-align: middle;
 }
 
+.loading {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(var(--light-color-rgb), 0.05);
+  border-top: 3px solid var(--link-hover-color);
+  border-radius: 50%;
+  animation: loading-spin 1.2s linear 0s infinite;
+}
+.loading--absolute {
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  animation: loading-spin-absolute 1.2s linear 0s infinite;
+}
+
+@keyframes loading-spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes loading-spin-absolute {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(359deg);
+  }
+}
 header {
   flex: 0 0 340px;
   display: flex;
@@ -196,6 +246,9 @@ header {
   top: var(--sp-5);
   height: calc(100vh - var(--sp-7) - var(--sp-7));
   text-align: center;
+}
+header > div {
+  width: 100%;
 }
 header .logo {
   display: inline-block;
@@ -284,6 +337,16 @@ main {
   flex-wrap: nowrap;
   gap: var(--sp-6);
 }
+main section {
+  width: 100%;
+  position: relative;
+}
+main section h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  margin-bottom: var(--sp-2);
+}
 main h1 {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
@@ -294,6 +357,111 @@ main p {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-medium);
   color: rgba(var(--light-color-rgb), 0.85);
+}
+main .offer-cards {
+  position: relative;
+  z-index: 22;
+  user-select: none;
+}
+main .offer-cards:hover .offer-card__item {
+  opacity: 0.5;
+}
+main .offer-cards:hover .offer-card__item:hover {
+  opacity: 1;
+}
+main .offer-cards .offer-card__item {
+  user-select: none;
+  background: var(--offer-card-background);
+  border: 1px solid rgba(141, 149, 184, 0.2);
+  border-radius: var(--sp-1);
+  margin-bottom: var(--sp-2);
+  padding: var(--sp-3);
+  text-align: left;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  height: 100%;
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+}
+main .offer-cards .offer-card__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(163, 148, 184, 0.3), transparent);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+main .offer-cards .offer-card__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: radial-gradient(200px circle at var(--glow-x) var(--glow-y), rgba(56, 116, 255, calc(var(--glow-intensity) * 0.8)) 0%, rgba(56, 116, 255, calc(var(--glow-intensity) * 0.4)) 30%, transparent 60%);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: subtract;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+main .offer-cards .offer-card__item:hover::before {
+  opacity: 1;
+}
+main .offer-cards .offer-card__item.particle-container {
+  position: relative;
+  overflow: hidden;
+}
+main .offer-cards .offer-card__item .particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(56, 116, 255, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100;
+  box-shadow: 0 0 6px rgba(56, 116, 255, 0.6);
+}
+main .offer-cards .offer-card__item .particle::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(56, 116, 255, 0.3);
+  border-radius: 50%;
+  z-index: -1;
+}
+main .offer-cards .offer-card__item-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--body-color);
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  white-space: nowrap;
+  margin-bottom: var(--sp-1);
+}
+main .offer-cards .offer-card__item p {
+  color: rgba(var(--light-color-rgb), 0.9);
+  font-size: var(--fotn-size-sm);
+  text-align: left;
+  max-width: 100%;
+}
+main .offer-cards .offer-card__item:last-child {
+  margin-bottom: var(--sp-0);
 }
 main .nav {
   background-color: rgba(255, 255, 255, 0.1);
@@ -314,6 +482,7 @@ main .nav {
   padding: var(--sp-0);
   list-style: none;
   padding: var(--sp-1);
+  z-index: 100;
 }
 main .nav li a {
   display: block;
@@ -322,15 +491,25 @@ main .nav li a {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
   border-radius: var(--sp-10);
-  padding: var(--sp-1) var(--sp-2);
+  padding: var(--sp-1) var(--sp-3);
   transition: all 0.2s linear;
 }
 main .nav li a svg {
   vertical-align: middle;
 }
+main .nav li:first-child a {
+  padding: var(--sp-1) var(--sp-2);
+}
 main .nav .active {
   background-color: var(--body-color);
   color: var(--body-background);
+}
+
+.global-spotlight {
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+  z-index: 200 !important;
+  pointer-events: none;
 }
 
 .container {

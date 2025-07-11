@@ -1,0 +1,33 @@
+@use '../abstracts/__mixins' as mx;
+
+.loading {
+	width: 32px;
+	height: 32px;
+	border: 3px solid rgba(var(--light-color-rgb), 0.05);
+	border-top: 3px solid var(--link-hover-color);
+	border-radius: 50%;
+	animation: loading-spin 1.2s linear 0s infinite;
+
+	&--absolute {
+		@include mx.absolute($left: 50%, $top: 50%);
+		animation: loading-spin-absolute 1.2s linear 0s infinite;
+	}
+}
+
+@keyframes loading-spin {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+
+@keyframes loading-spin-absolute {
+	from {
+		transform: translate(-50%, -50%) rotate(0);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(359deg);
+	}
+}

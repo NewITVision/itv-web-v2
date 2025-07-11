@@ -30,9 +30,9 @@
 }
 
 @function hex-to-rgb($hex) {
-	$red: color.channel($hex, "red", $space: rgb);
-	$green: color.channel($hex, "green", $space: rgb);
-	$blue: color.channel($hex, "blue", $space: rgb);
+	$red: color.channel($hex, 'red', $space: rgb);
+	$green: color.channel($hex, 'green', $space: rgb);
+	$blue: color.channel($hex, 'blue', $space: rgb);
 
 	@return '#{$red}, #{$green}, #{$blue}';
 }

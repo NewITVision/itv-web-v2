@@ -9,7 +9,7 @@ $breakpoints: (
 	'desktop-lg': 1600px,
 	'desktop-xlg': 1800px,
 	'desktop-xl': 1920px,
-	'desktop-2xl': 2560px
+	'desktop-2xl': 2560px,
 );
 
 @mixin respond-to($breakpoint) {
@@ -17,8 +17,7 @@ $breakpoints: (
 		@media screen and (max-width: map.get($breakpoints, $breakpoint)) {
 			@content;
 		}
-	}
-	@else {
+	} @else {
 		@error 'Unknown breakpoint: #{$breakpoint}';
 	}
 }
@@ -28,9 +27,7 @@ $breakpoints: (
 		@media screen and (min-width: map.get($breakpoints, $breakpoint)) {
 			@content;
 		}
-	}
-
-	@else {
+	} @else {
 		@error 'Unknown breakpoint: #{$breakpoint}';
 	}
 }
@@ -40,8 +37,7 @@ $breakpoints: (
 		@media screen and (min-width: map.get($breakpoints, $min-breakpoint)) and (max-width: map.get($breakpoints, $max-breakpoint)) {
 			@content;
 		}
-	}
-	@else {
+	} @else {
 		@error 'Unknown breakpoint: #{$min-breakpoint} or #{$max-breakpoint}';
 	}
 }

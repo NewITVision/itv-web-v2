@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
 export const About: React.FC = () => {
 	const { t } = useTranslation();
@@ -7,9 +7,7 @@ export const About: React.FC = () => {
 	return (
 		<>
 			<h1>{t('hero.title')}</h1>
-			<p>
-				{t('hero.content')}
-			</p>
+			<p>{t('hero.content')}</p>
 		</>
-	)
-}
+	);
+};

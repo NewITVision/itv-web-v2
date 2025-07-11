@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {NavigationItems} from "@config/NavigationItems";
+import { NavigationItems } from '@config/NavigationItems';
 
 export const SocialMedia: React.FC = () => {
 	const { socialItems } = NavigationItems();
@@ -10,12 +10,17 @@ export const SocialMedia: React.FC = () => {
 			<ul className="social-media">
 				{socialItems.map((item, i) => (
 					<li key={i}>
-						<Link to={item.path} rel="nofollow noopener noreferrer" target="_blank" title={item.title}>
+						<Link
+							to={item.path}
+							rel="nofollow noopener noreferrer"
+							target="_blank"
+							title={item.title}
+						>
 							{item.icon}
 						</Link>
 					</li>
 				))}
 			</ul>
 		</>
-	)
-}
+	);
+};

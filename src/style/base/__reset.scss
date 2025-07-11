@@ -16,7 +16,7 @@
 }
 
 ::-webkit-scrollbar-track {
-	background: rgb( var(--area-background-dark) );
+	background: rgb(var(--area-background-dark));
 }
 
 ::selection {
@@ -52,7 +52,13 @@ body {
 	margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
 	margin: var(--sp-0);
 	padding: var(--sp-0);
 	font-size: inherit;
@@ -65,7 +71,10 @@ p {
 	white-space: break-spaces;
 }
 
-a, a:active, a:visited, a:link {
+a,
+a:active,
+a:visited,
+a:link {
 	color: var(--body-color);
 	text-decoration: none;
 	transition: color 0.2s linear;
@@ -75,7 +84,10 @@ a, a:active, a:visited, a:link {
 	}
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
 	font: inherit;
 	color: inherit;
 }
@@ -111,21 +123,21 @@ table {
 	border-spacing: 0;
 }
 
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
 	line-height: normal;
 }
 
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
 	-webkit-appearance: none;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
 	-webkit-appearance: none;
 	margin: var(--sp-0);
 }

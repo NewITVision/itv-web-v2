@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export const useLocalStorage = (key: string, initialValue: any) => {
 	const [value, setValue] = useState(() => {
 		let currentValue;
 
 		try {
-			currentValue = JSON.parse(
-				localStorage.getItem(key) || String(initialValue)
-			);
+			currentValue = JSON.parse(localStorage.getItem(key) || String(initialValue));
 		} catch (error) {
 			currentValue = initialValue;
 		}

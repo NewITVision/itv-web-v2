@@ -1,7 +1,7 @@
 import React from 'react';
-import { ArrowUp } from "lucide-react";
-import { NavigationItems } from "@config/NavigationItems";
-import { useTranslation } from "react-i18next";
+import { ArrowUp } from 'lucide-react';
+import { NavigationItems } from '@config/NavigationItems';
+import { useTranslation } from 'react-i18next';
 
 interface NavigationProps {
 	activeSection: string;
@@ -22,10 +22,12 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
 
 				{navItems.map((item, i) => (
 					<li key={i}>
-						<a href={item.path} className={activeSection === item.path ? 'active' : ''}>{item.title}</a>
+						<a href={item.path} className={activeSection === item.path ? 'active' : ''}>
+							{item.title}
+						</a>
 					</li>
 				))}
 			</ul>
 		</>
-	)
-}
+	);
+};
