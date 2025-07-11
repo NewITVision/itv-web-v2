@@ -23,6 +23,11 @@
 		"offer_themes_content": "Zajmujemy się kodowaniem i projektowaniem minimalistycznych motywów dla for opartych na IPS 4 lub MyBB. Jeśli chcesz odświeżyć wygląd swojej społeczności lub postawić coś od zera, dostarczymy Ci lekki, estetyczny i funkcjonalny motyw dopasowany do Twoich potrzeb. Nasze motywy to nie tylko ładny wygląd — stawiamy na szybkość działania, przejrzystość i wygodę użytkowników. Dbamy o każdy etap: od czystego kodu, przez responsywność, po pełną integrację z forum.",
 
 		"offer_web_title": "Tworzenie stron internetowych",
-		"offer_web_content": "Zajmujemy się tworzeniem nowoczesnych, responsywnych stron internetowych z naciskiem na front-end. Projektujemy i kodujemy interfejsy, które nie tylko dobrze wyglądają, ale też są szybkie, czytelne i wygodne w obsłudze. Niezależnie od tego, czy potrzebujesz klasycznej strony internetowej, interaktywnej aplikacji webowej czy rozbudowanego UI — mamy doświadczenie i umiejętności, by zamienić Twoją wizję w funkcjonalny projekt. Stawiamy na nowoczesny design, płynne animacje i dopracowane detale, które robią różnicę. Twój pomysł — nasz kod. Prosto, sprawnie i z estetyką na pierwszym miejscu."
+		"offer_web_content": "Zajmujemy się tworzeniem nowoczesnych, responsywnych stron internetowych z naciskiem na front-end. Projektujemy i kodujemy interfejsy, które nie tylko dobrze wyglądają, ale też są szybkie, czytelne i wygodne w obsłudze. Niezależnie od tego, czy potrzebujesz klasycznej strony internetowej, interaktywnej aplikacji webowej czy rozbudowanego UI — mamy doświadczenie i umiejętności, by zamienić Twoją wizję w funkcjonalny projekt. Stawiamy na nowoczesny design, płynne animacje i dopracowane detale, które robią różnicę. Twój pomysł — nasz kod. Prosto, sprawnie i z estetyką na pierwszym miejscu.",
+		"offer_discord_title": "Serwery Discord",
+		"offer_discord_content": "Tworzymy dobrze zorganizowane i dopasowane do potrzeb serwery Discord — czy to do gier, społeczności, czy współpracy. Zadbamy o wszystko: przejrzystą strukturę kanałów, czytelne role, integracje z botami i automatyzacje, które ułatwiają zarządzanie i poprawiają komfort użytkowników. Mamy doświadczenie w budowie serwerów od zera, jak i w optymalizacji już istniejących. Jeśli chcesz, żeby Twój serwer wyglądał profesjonalnie i działał bez chaosu — ogarniemy to za Ciebie."
+	},
+	"projects": {
+		"title": "Projekty"
 	}
 }

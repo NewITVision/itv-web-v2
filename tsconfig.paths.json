@@ -11,7 +11,8 @@
 			"@utils/*": ["./utils/*"],
 			"@services/*": ["./services/*"],
 			"@data/*": ["../data/*"],
-			"@compiled/*": ["compiled/css/*"]
+			"@compiled/*": ["compiled/css/*"],
+			"@shared/*": ["shared/*"]
 		}
 	},
 	"exclude": ["node_modules"]
