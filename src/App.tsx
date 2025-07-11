@@ -1,4 +1,3 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Header } from '@app/components/Header/Header';
 import { Navigation } from '@app/components/Header/components/Navigation';
 import React from 'react';
@@ -27,7 +26,7 @@ function App() {
 						<Offer />
 					</section>
 
-					<section id="projects" ref={refs.projectsRef} style={{ height: '100vh' }}>
+					<section id="projects" ref={refs.projectsRef}>
 						<Projects />
 					</section>
 				</main>

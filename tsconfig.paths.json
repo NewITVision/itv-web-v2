@@ -3,7 +3,7 @@
 		"baseUrl": "./src",
 		"paths": {
 			"@app/*": ["./app/*"],
-			"@typings/*": ["./typings/*"],
+			"@typings/*": ["./types/*"],
 			"@config/*": ["./config/*"],
 			"@contexts/*": ["./contexts/*"],
 			"@icons/*": ["./icons/*"],

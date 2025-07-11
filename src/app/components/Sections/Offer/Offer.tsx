@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import OfferCards from "@shared/components/OfferCards/OfferCards";
+import OfferCards from '@app/components/OfferCards/OfferCards';
 
 export const Offer: React.FC = () => {
 	const { t } = useTranslation();

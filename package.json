@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc -b && vite build",
-		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,html,md,yml,yaml}\"",
+		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,html,md,yml,yaml}\"",
 		"lint": "eslint .",
 		"preview": "vite preview",
 		"sass": "sass --watch ./src/style/main.scss:./src/compiled/css/index.css"

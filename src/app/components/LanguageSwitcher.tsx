@@ -5,7 +5,7 @@ export const LanguageSwitcher: React.FC = () => {
 	const { i18n } = useTranslation();
 
 	return (
-		<ul className="language__switcher">
+		<ul className="language-switcher">
 			<li
 				onClick={() => i18n.changeLanguage('pl')}
 				className={i18n.language === 'pl' ? 'active' : ''}

@@ -18,6 +18,14 @@
   --light-color-rgb: 197, 222, 255;
   --offer-card-background: #0b141e;
   --offer-card-background-rgb: 11, 20, 30;
+  --message-success: #a2ff6c;
+  --message-success-rgb: 162, 255, 108;
+  --message-error: #dc143c;
+  --message-error-rgb: 220, 20, 60;
+  --message-warning: #ca693c;
+  --message-warning-rgb: 202, 105, 60;
+  --message-info: #1a56aa;
+  --message-info-rgb: 26, 86, 170;
   --body-background: #091018;
   --body-color: #fafafa;
   --font-family-base: "Figtree", "Inter", "Segoe UI", Tahoma, Geneva, Verdana;
@@ -235,6 +243,50 @@ img {
     transform: translate(-50%, -50%) rotate(359deg);
   }
 }
+.message {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--sp-1);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  width: 100%;
+  border: 1px solid transparent;
+  transition: filter 0.2s linear;
+  line-height: 0;
+}
+.message svg {
+  vertical-align: middle;
+  height: 100%;
+}
+.message.message--success {
+  background-color: rgba(var(--message-success-rgb), 0.25);
+  border: 1px solid rgba(var(--message-success-rgb), 1);
+  color: var(--body-color);
+}
+.message.message--warning {
+  background-color: rgba(var(--message-warning-rgb), 0.25);
+  border: 1px solid rgba(var(--message-warning-rgb), 1);
+  color: var(--body-color);
+}
+.message.message--info {
+  background-color: rgba(var(--message-info-rgb), 0.25);
+  border: 1px solid rgba(var(--message-info-rgb), 1);
+  color: var(--body-color);
+}
+.message.message--error {
+  background-color: rgba(var(--message-error-rgb), 0.25);
+  border: 1px solid rgba(var(--message-error-rgb), 1);
+  color: var(--body-color);
+}
+.message:hover {
+  filter: brightness(1.1);
+}
+
 header {
   flex: 0 0 340px;
   display: flex;
@@ -295,14 +347,14 @@ header .theme ul li:hover {
 header .theme ul li.active {
   color: var(--link-hover-color);
 }
-header ul.language__switcher li {
+header ul.language-switcher li {
   transform: scale(0.8);
   transition: transform 0.2s linear;
 }
-header ul.language__switcher li.active {
+header ul.language-switcher li.active {
   transform: scale(1);
 }
-header ul.language__switcher li img {
+header ul.language-switcher li img {
   user-select: none;
 }
 header .social-media {
@@ -462,6 +514,14 @@ main .offer-cards .offer-card__item p {
 }
 main .offer-cards .offer-card__item:last-child {
   margin-bottom: var(--sp-0);
+}
+main .projects {
+  margin: var(--sp-0);
+  padding: var(--sp-0);
+  list-style: none;
+}
+main .projects li img {
+  max-width: 100%;
 }
 main .nav {
   background-color: rgba(255, 255, 255, 0.1);

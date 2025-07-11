@@ -1,10 +1,8 @@
-import axios from "axios";
-
-const corsFix = 'https://cors-anywhere.herokuapp.com/'
+import axios from 'axios';
 
 export async function getProjects() {
 	try {
-		const response = await axios.get(`http://newitvision.test/api/portfolio`);
+		const response = await axios.get(`${import.meta.env.VITE_API_URL}/portfolio`);
 		return response.data.data;
 	} catch (error) {
 		console.error(error);

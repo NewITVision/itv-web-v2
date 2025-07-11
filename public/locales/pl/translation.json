@@ -29,5 +29,9 @@
 	},
 	"projects": {
 		"title": "Projekty"
+	},
+	"message": {
+		"not_found": "Nie znaleziono",
+		"is_error": "Błąd podczas wczytywania..."
 	}
 }

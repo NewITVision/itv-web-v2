@@ -297,8 +297,8 @@ const OfferCards: React.FC = () => {
 				</ParticleCard>
 
 				<ParticleCard className="offer-card__item">
-					<h3 className="offer-card__item-title">{t('offer.offer_themes_title')}</h3>
-					<p>{t('offer.offer_themes_content')}</p>
+					<h3 className="offer-card__item-title">{t('offer.offer_discord_title')}</h3>
+					<p>{t('offer.offer_discord_content')}</p>
 				</ParticleCard>
 			</div>
 		</div>
