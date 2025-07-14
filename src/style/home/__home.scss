@@ -137,7 +137,7 @@ main {
 		.offer-card__item {
 			user-select: none;
 			background: var(--offer-card-background);
-			border: 1px solid rgba(141, 149, 184, 0.2);
+			border: 1px solid rgba(141, 149, 184, 0.1);
 			border-radius: var(--sp-1);
 			margin-bottom: var(--sp-2);
 			padding: var(--sp-3);
@@ -247,9 +247,68 @@ main {
 	.projects {
 		@include mx.list-reset;
 
-		li {
-			img {
-				max-width: 100%;
+		&>li {
+			@include mx.flex(row, flex-start, center, $gap: var(--sp-2));
+			//background: var(--offer-card-background);
+			border: 1px solid rgba(141, 149, 184, 0.2);
+			border-radius: var(--sp-1);
+			margin-bottom: var(--sp-2);
+			min-height: 150px;
+			padding: var(--sp-3);
+			text-align: left;
+			text-decoration: none;
+			transition: all 0.3s ease;
+			backdrop-filter: blur(10px);
+
+			&>div {
+				&:first-child {
+					flex: 0 0 200px;
+					text-align: center;
+
+					img {
+						max-width: 200px;
+						height: 100%;
+						object-fit: cover;
+						margin: var(--sp-0) auto;
+						border-radius: var(--sp-1);
+					}
+
+					svg {
+						color: var(--light-color);
+						width: 64px;
+						height: 64px;
+						opacity: 0.3;
+						vertical-align: middle;
+
+						path {
+							stroke-width: 1.5px;
+						}
+					}
+				}
+			}
+
+			&>div {
+				height: 100%;
+
+				h3 {
+					font-size: var(--font-size-xl);
+					font-weight: var(--font-weight-semibold);
+				}
+
+				p {
+					font-size: var(--font-size-sm);
+					font-weight: var(--font-weight-medium);
+				}
+
+				.tags {
+					@include mx.list-reset( $margin: auto var(--sp-0) var(--sp-0) var(--sp-0) var(--sp-0) );
+					@include mx.flex(row, flex-start, center, wrap, var(--sp-2));
+
+					li {
+						font-size: var(--font-size-sm);
+						font-weight: var(--font-weight-semibold);
+					}
+				}
 			}
 		}
 	}

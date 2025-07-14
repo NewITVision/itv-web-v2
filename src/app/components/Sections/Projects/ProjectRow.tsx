@@ -1,19 +1,27 @@
 import React, { useState } from 'react';
 import { ProjectRowProps } from '@typings/Project';
 import { ImageMinus } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import {Link} from "react-router-dom";
 
 export const ProjectRow: React.FC<ProjectRowProps> = ({
 	id,
 	name,
+	name_eng,
 	description,
+	description_eng,
 	images,
 	main_image,
 	tags,
 	links,
 	price,
 	created_at,
+	usdRate
 }) => {
 	const [isLoaded, setIsLoaded] = useState<boolean>(true);
+	const { i18n, t } = useTranslation();
+
+	const usdPrice = (price && usdRate) ? (price / usdRate).toFixed(2) : null;
 
 	return (
 		<>
@@ -35,8 +43,44 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 						</>
 					)}
 				</div>
-				{name}
-				{description}
+
+				<div>
+					<h3>{i18n.language === 'pl' ? name : name_eng}</h3>
+					<p>{i18n.language === 'pl' ? description : description_eng}</p>
+
+					<div>
+						{tags && tags.length > 0 && (
+							<ul className="tags">
+								{tags.map((tag) => (
+									<li>
+										<span>{tag.name}</span>
+									</li>
+								))}
+							</ul>
+						)}
+
+						{links && (
+							<ul className="links">
+								<li>
+									<Link to={'/'} target="_blank" rel="nofollow noopener noreferrer">
+										{t('projects.demo')}
+									</Link>
+									{links.product && (
+										<>
+											<Link to={'/'} target="_blank" rel="nofollow noopener noreferrer">
+												{t('projects.product', {
+													amount: i18n.language === 'pl' ? price : usdPrice,
+													currency: i18n.language === 'pl' ? 'zł' : '$'
+												})}
+											</Link>
+										</>
+									)}
+								</li>
+							</ul>
+						)}
+
+					</div>
+				</div>
 			</li>
 		</>
 	);

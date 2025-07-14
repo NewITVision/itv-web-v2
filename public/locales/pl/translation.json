@@ -28,7 +28,9 @@
 		"offer_discord_content": "Tworzymy dobrze zorganizowane i dopasowane do potrzeb serwery Discord — czy to do gier, społeczności, czy współpracy. Zadbamy o wszystko: przejrzystą strukturę kanałów, czytelne role, integracje z botami i automatyzacje, które ułatwiają zarządzanie i poprawiają komfort użytkowników. Mamy doświadczenie w budowie serwerów od zera, jak i w optymalizacji już istniejących. Jeśli chcesz, żeby Twój serwer wyglądał profesjonalnie i działał bez chaosu — ogarniemy to za Ciebie."
 	},
 	"projects": {
-		"title": "Projekty"
+		"title": "Projekty",
+		"demo": "Podgląd na żywo",
+		"product": "Kup {{amount}} {{currency}}"
 	},
 	"message": {
 		"not_found": "Nie znaleziono",

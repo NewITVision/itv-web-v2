@@ -424,7 +424,7 @@ main .offer-cards:hover .offer-card__item:hover {
 main .offer-cards .offer-card__item {
   user-select: none;
   background: var(--offer-card-background);
-  border: 1px solid rgba(141, 149, 184, 0.2);
+  border: 1px solid rgba(141, 149, 184, 0.1);
   border-radius: var(--sp-1);
   margin-bottom: var(--sp-2);
   padding: var(--sp-3);
@@ -520,8 +520,69 @@ main .projects {
   padding: var(--sp-0);
   list-style: none;
 }
-main .projects li img {
-  max-width: 100%;
+main .projects > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: var(--sp-2);
+  border: 1px solid rgba(141, 149, 184, 0.2);
+  border-radius: var(--sp-1);
+  margin-bottom: var(--sp-2);
+  min-height: 150px;
+  padding: var(--sp-3);
+  text-align: left;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+main .projects > li > div:first-child {
+  flex: 0 0 200px;
+  text-align: center;
+}
+main .projects > li > div:first-child img {
+  max-width: 200px;
+  height: 100%;
+  object-fit: cover;
+  margin: var(--sp-0) auto;
+  border-radius: var(--sp-1);
+}
+main .projects > li > div:first-child svg {
+  color: var(--light-color);
+  width: 64px;
+  height: 64px;
+  opacity: 0.3;
+  vertical-align: middle;
+}
+main .projects > li > div:first-child svg path {
+  stroke-width: 1.5px;
+}
+main .projects > li > div {
+  height: 100%;
+}
+main .projects > li > div h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+main .projects > li > div p {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+main .projects > li > div .tags {
+  margin: auto var(--sp-0) var(--sp-0) var(--sp-0) var(--sp-0);
+  padding: var(--sp-0);
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+main .projects > li > div .tags li {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
 }
 main .nav {
   background-color: rgba(255, 255, 255, 0.1);
