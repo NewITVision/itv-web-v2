@@ -15,8 +15,9 @@ function App() {
 			<div className="container">
 				<Header />
 
+				<Navigation activeSection={activeSection} />
+
 				<main>
-					<Navigation activeSection={activeSection} />
 
 					<section id="about" ref={refs.aboutRef}>
 						<About />

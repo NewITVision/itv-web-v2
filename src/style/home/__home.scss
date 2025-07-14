@@ -246,9 +246,10 @@ main {
 
 	.projects {
 		@include mx.list-reset;
+		padding-bottom: var(--sp-10);
 
 		&>li {
-			@include mx.flex(row, flex-start, center, $gap: var(--sp-2));
+			@include mx.flex(column, flex-start, flex-start, $gap: var(--sp-3));
 			//background: var(--offer-card-background);
 			border: 1px solid rgba(141, 149, 184, 0.2);
 			border-radius: var(--sp-1);
@@ -258,102 +259,117 @@ main {
 			text-align: left;
 			text-decoration: none;
 			transition: all 0.3s ease;
-			backdrop-filter: blur(10px);
 
-			&>div {
-				&:first-child {
-					flex: 0 0 200px;
-					text-align: center;
+			.tags {
+				@include mx.list-reset;
+				@include mx.flex(row, flex-start, center, wrap, var(--sp-1));
 
-					img {
-						max-width: 200px;
-						height: 100%;
-						object-fit: cover;
-						margin: var(--sp-0) auto;
-						border-radius: var(--sp-1);
-					}
-
-					svg {
-						color: var(--light-color);
-						width: 64px;
-						height: 64px;
-						opacity: 0.3;
-						vertical-align: middle;
-
-						path {
-							stroke-width: 1.5px;
-						}
+				li {
+					span {
+						display: block;
+						background-color: rgba(var(--primary-color-rgb), 0.05);
+						color: var(--primary-color);
+						font-size: var(--font-size-xs);
+						font-weight: var(--font-weight-semibold);
+						padding: var(--sp-0) var(--sp-2);
+						height: 25px;
+						line-height: 25px;
+						text-transform: uppercase;
+						border-radius: var(--sp-10);
 					}
 				}
 			}
 
-			&>div {
-				height: 100%;
 
-				h3 {
-					font-size: var(--font-size-xl);
-					font-weight: var(--font-weight-semibold);
+			.project-content {
+				@include mx.flex(row, flex-start, flex-start, $gap: var(--sp-2));
+
+				&>div {
+					&:first-child {
+						flex: 0 0 200px;
+						text-align: center;
+
+						img {
+							max-width: 200px;
+							height: 100%;
+							object-fit: cover;
+							margin: var(--sp-0) auto;
+							border-radius: var(--sp-1);
+						}
+
+						svg {
+							color: var(--light-color);
+							width: 64px;
+							height: 64px;
+							opacity: 0.3;
+							vertical-align: middle;
+
+							path {
+								stroke-width: 1.5px;
+							}
+						}
+					}
 				}
 
-				p {
-					font-size: var(--font-size-sm);
-					font-weight: var(--font-weight-medium);
-				}
+				&>div {
+					height: 100%;
 
-				.tags {
-					@include mx.list-reset( $margin: auto var(--sp-0) var(--sp-0) var(--sp-0) var(--sp-0) );
-					@include mx.flex(row, flex-start, center, wrap, var(--sp-2));
-
-					li {
-						font-size: var(--font-size-sm);
+					h3 {
+						font-size: var(--font-size-xl);
 						font-weight: var(--font-weight-semibold);
 					}
+
+					p {
+						font-size: var(--font-size-sm);
+						font-weight: var(--font-weight-medium);
+					}
+
 				}
 			}
 		}
 	}
+}
 
-	.nav {
-		background-color: rgba(255, 255, 255, 0.1);
-		border: 1px solid rgba(255, 255, 255, 0.15);
-		backdrop-filter: blur(10px);
-		border-radius: var(--sp-10);
-		position: fixed;
-		bottom: var(--sp-10);
-		left: 50%;
-		transform: translateX(-50%);
-		@include mx.flex(row, center, center, $gap: var(--sp-1));
-		@include mx.list-reset;
-		padding: var(--sp-1);
-		z-index: 100;
+.nav {
+	background-color: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(10px);
+	border-radius: var(--sp-10);
+	position: fixed;
+	bottom: var(--sp-6);
+	left: 50%;
+	transform: translateX(-50%);
+	@include mx.flex(row, center, center, $gap: var(--sp-1));
+	@include mx.list-reset;
+	padding: var(--sp-1);
+	z-index: 100;
 
-		li {
+	li {
+		a {
+			display: block;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: var(--font-size-lg);
+			font-weight: var(--font-weight-semibold);
+			border-radius: var(--sp-10);
+			padding: var(--sp-1) var(--sp-3);
+			transition: all 0.2s linear;
+
+			svg {
+				vertical-align: middle;
+			}
+		}
+
+		&:first-child {
 			a {
-				display: block;
-				text-align: center;
-				text-transform: uppercase;
-				font-size: var(--font-size-lg);
-				font-weight: var(--font-weight-semibold);
-				border-radius: var(--sp-10);
-				padding: var(--sp-1) var(--sp-3);
-				transition: all 0.2s linear;
-
-				svg {
-					vertical-align: middle;
-				}
-			}
-
-			&:first-child {
-				a {
-					padding: var(--sp-1) var(--sp-2);
-				}
+				padding: var(--sp-1) var(--sp-2);
 			}
 		}
+	}
 
-		.active {
-			background-color: var(--body-color);
-			color: var(--body-background);
-		}
+	.active {
+		background-color: var(--body-color);
+		color: var(--body-background);
 	}
 }
 

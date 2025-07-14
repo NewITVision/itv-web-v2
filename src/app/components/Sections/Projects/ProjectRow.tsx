@@ -26,59 +26,62 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 	return (
 		<>
 			<li>
-				<div>
-					{isLoaded ? (
-						<>
-							<img
-								src={`${import.meta.env.VITE_APP_URL}/${main_image}`}
-								alt={name}
-								loading="lazy"
-								onLoad={(e) => (e.currentTarget.style.display = 'block')}
-								onError={() => setIsLoaded(false)}
-							/>
-						</>
-					) : (
-						<>
-							<ImageMinus />
-						</>
-					)}
-				</div>
+				{tags && tags.length > 0 && (
+					<ul className="tags">
+						{tags.map((tag) => (
+							<li>
+								<span>{tag.name}</span>
+							</li>
+						))}
+					</ul>
+				)}
 
-				<div>
-					<h3>{i18n.language === 'pl' ? name : name_eng}</h3>
-					<p>{i18n.language === 'pl' ? description : description_eng}</p>
+				<div className="project-content">
+					<div>
+						{isLoaded ? (
+							<>
+								<img
+									src={`${import.meta.env.VITE_APP_URL}/${main_image}`}
+									alt={name}
+									loading="lazy"
+									onLoad={(e) => (e.currentTarget.style.display = 'block')}
+									onError={() => setIsLoaded(false)}
+								/>
+							</>
+						) : (
+							<>
+								<ImageMinus />
+							</>
+						)}
+					</div>
 
 					<div>
-						{tags && tags.length > 0 && (
-							<ul className="tags">
-								{tags.map((tag) => (
+						<h3>{i18n.language === 'pl' ? name : name_eng}</h3>
+
+						<p>{i18n.language === 'pl' ? description : description_eng}</p>
+
+						<div>
+							{links && (
+								<ul className="links">
 									<li>
-										<span>{tag.name}</span>
+										<Link to={'/'} target="_blank" rel="nofollow noopener noreferrer">
+											{t('projects.demo')}
+										</Link>
+										{links.product && (
+											<>
+												<Link to={'/'} target="_blank" rel="nofollow noopener noreferrer">
+													{t('projects.product', {
+														amount: i18n.language === 'pl' ? price : usdPrice,
+														currency: i18n.language === 'pl' ? 'zł' : '$'
+													})}
+												</Link>
+											</>
+										)}
 									</li>
-								))}
-							</ul>
-						)}
+								</ul>
+							)}
 
-						{links && (
-							<ul className="links">
-								<li>
-									<Link to={'/'} target="_blank" rel="nofollow noopener noreferrer">
-										{t('projects.demo')}
-									</Link>
-									{links.product && (
-										<>
-											<Link to={'/'} target="_blank" rel="nofollow noopener noreferrer">
-												{t('projects.product', {
-													amount: i18n.language === 'pl' ? price : usdPrice,
-													currency: i18n.language === 'pl' ? 'zł' : '$'
-												})}
-											</Link>
-										</>
-									)}
-								</li>
-							</ul>
-						)}
-
+						</div>
 					</div>
 				</div>
 			</li>

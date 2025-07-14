@@ -29,7 +29,7 @@
   --body-background: #091018;
   --body-color: #fafafa;
   --font-family-base: "Figtree", "Inter", "Segoe UI", Tahoma, Geneva, Verdana;
-  --font-size-xs: calc(12px + 0 * 100vw);
+  --font-size-xs: calc(11px + 0 * 100vw);
   --font-size-sm: calc(12.8px + 0.000625 * 100vw);
   --font-size-base: calc(13.8px + 0.000625 * 100vw);
   --font-size-lg: calc(15px + 0 * 100vw);
@@ -519,14 +519,15 @@ main .projects {
   margin: var(--sp-0);
   padding: var(--sp-0);
   list-style: none;
+  padding-bottom: var(--sp-10);
 }
 main .projects > li {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: nowrap;
-  gap: var(--sp-2);
+  gap: var(--sp-3);
   border: 1px solid rgba(141, 149, 184, 0.2);
   border-radius: var(--sp-1);
   margin-bottom: var(--sp-2);
@@ -535,42 +536,9 @@ main .projects > li {
   text-align: left;
   text-decoration: none;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
 }
-main .projects > li > div:first-child {
-  flex: 0 0 200px;
-  text-align: center;
-}
-main .projects > li > div:first-child img {
-  max-width: 200px;
-  height: 100%;
-  object-fit: cover;
-  margin: var(--sp-0) auto;
-  border-radius: var(--sp-1);
-}
-main .projects > li > div:first-child svg {
-  color: var(--light-color);
-  width: 64px;
-  height: 64px;
-  opacity: 0.3;
-  vertical-align: middle;
-}
-main .projects > li > div:first-child svg path {
-  stroke-width: 1.5px;
-}
-main .projects > li > div {
-  height: 100%;
-}
-main .projects > li > div h3 {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-}
-main .projects > li > div p {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-}
-main .projects > li > div .tags {
-  margin: auto var(--sp-0) var(--sp-0) var(--sp-0) var(--sp-0);
+main .projects > li .tags {
+  margin: var(--sp-0);
   padding: var(--sp-0);
   list-style: none;
   display: flex;
@@ -578,19 +546,68 @@ main .projects > li > div .tags {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  gap: var(--sp-1);
+}
+main .projects > li .tags li span {
+  display: block;
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+  color: var(--primary-color);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--sp-0) var(--sp-2);
+  height: 25px;
+  line-height: 25px;
+  text-transform: uppercase;
+  border-radius: var(--sp-10);
+}
+main .projects > li .project-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
   gap: var(--sp-2);
 }
-main .projects > li > div .tags li {
-  font-size: var(--font-size-sm);
+main .projects > li .project-content > div:first-child {
+  flex: 0 0 200px;
+  text-align: center;
+}
+main .projects > li .project-content > div:first-child img {
+  max-width: 200px;
+  height: 100%;
+  object-fit: cover;
+  margin: var(--sp-0) auto;
+  border-radius: var(--sp-1);
+}
+main .projects > li .project-content > div:first-child svg {
+  color: var(--light-color);
+  width: 64px;
+  height: 64px;
+  opacity: 0.3;
+  vertical-align: middle;
+}
+main .projects > li .project-content > div:first-child svg path {
+  stroke-width: 1.5px;
+}
+main .projects > li .project-content > div {
+  height: 100%;
+}
+main .projects > li .project-content > div h3 {
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semibold);
 }
-main .nav {
+main .projects > li .project-content > div p {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.nav {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   border-radius: var(--sp-10);
   position: fixed;
-  bottom: var(--sp-10);
+  bottom: var(--sp-6);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -605,7 +622,7 @@ main .nav {
   padding: var(--sp-1);
   z-index: 100;
 }
-main .nav li a {
+.nav li a {
   display: block;
   text-align: center;
   text-transform: uppercase;
@@ -615,13 +632,13 @@ main .nav li a {
   padding: var(--sp-1) var(--sp-3);
   transition: all 0.2s linear;
 }
-main .nav li a svg {
+.nav li a svg {
   vertical-align: middle;
 }
-main .nav li:first-child a {
+.nav li:first-child a {
   padding: var(--sp-1) var(--sp-2);
 }
-main .nav .active {
+.nav .active {
   background-color: var(--body-color);
   color: var(--body-background);
 }

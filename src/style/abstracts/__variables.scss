@@ -44,7 +44,7 @@ $light-colors: (
 	--body-color: #fafafa;
 
 	--font-family-base: 'Figtree', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana;
-	--font-size-xs: #{fn.fluid-type(320px, 1920px, 12px, 12px)};
+	--font-size-xs: #{fn.fluid-type(320px, 1920px, 11px, 11px)};
 	--font-size-sm: #{fn.fluid-type(320px, 1920px, 13px, 14px)};
 	--font-size-base: #{fn.fluid-type(320px, 1920px, 14px, 15px)};
 	--font-size-lg: #{fn.fluid-type(320px, 1920px, 15px, 15px)};

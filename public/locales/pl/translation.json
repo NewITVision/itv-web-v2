@@ -30,7 +30,7 @@
 	"projects": {
 		"title": "Projekty",
 		"demo": "Podgląd na żywo",
-		"product": "Kup {{amount}} {{currency}}"
+		"product": "Kup teraz! ({{amount}} {{currency}})"
 	},
 	"message": {
 		"not_found": "Nie znaleziono",
