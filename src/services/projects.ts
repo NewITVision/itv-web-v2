@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {ExchangeRateToUSD} from "@typings/Config";
+import { ExchangeRateToUSD } from '@typings/Config';
 
 export async function getProjects() {
 	try {

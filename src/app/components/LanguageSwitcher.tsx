@@ -10,13 +10,13 @@ export const LanguageSwitcher: React.FC = () => {
 				onClick={() => i18n.changeLanguage('pl')}
 				className={i18n.language === 'pl' ? 'active' : ''}
 			>
-				<img src="./images/pl.webp" loading="lazy" width={32} height={20} alt='Polski' />
+				<img src="./images/pl.webp" loading="lazy" width={32} height={20} alt="Polski" />
 			</li>
 			<li
 				onClick={() => i18n.changeLanguage('en')}
 				className={i18n.language === 'en' ? 'active' : ''}
 			>
-				<img src="./images/en.webp" loading="lazy" width={32} height={20} alt='English' />
+				<img src="./images/en.webp" loading="lazy" width={32} height={20} alt="English" />
 			</li>
 		</ul>
 	);

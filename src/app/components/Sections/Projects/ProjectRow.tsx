@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ProjectRowProps } from '@typings/Project';
 import { ImageMinus } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export const ProjectRow: React.FC<ProjectRowProps> = ({
 	id,
@@ -16,12 +16,12 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 	links,
 	price,
 	created_at,
-	usdRate
+	usdRate,
 }) => {
 	const [isLoaded, setIsLoaded] = useState<boolean>(true);
 	const { i18n, t } = useTranslation();
 
-	const usdPrice = (price && usdRate) ? (price / usdRate).toFixed(2) : null;
+	const usdPrice = price && usdRate ? (price / usdRate).toFixed(2) : null;
 
 	return (
 		<>
@@ -64,23 +64,31 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 							{links && (
 								<ul className="links">
 									<li>
-										<Link to={'/'} target="_blank" rel="nofollow noopener noreferrer">
+										<Link
+											to={'/'}
+											target="_blank"
+											rel="nofollow noopener noreferrer"
+										>
 											{t('projects.demo')}
 										</Link>
 									</li>
 									{links.product && (
 										<li>
-											<Link to={'/'} target="_blank" rel="nofollow noopener noreferrer">
+											<Link
+												to={'/'}
+												target="_blank"
+												rel="nofollow noopener noreferrer"
+											>
 												{t('projects.product', {
-													amount: i18n.language === 'pl' ? price : usdPrice,
-													currency: i18n.language === 'pl' ? 'zł' : '$'
+													amount:
+														i18n.language === 'pl' ? price : usdPrice,
+													currency: i18n.language === 'pl' ? 'zł' : '$',
 												})}
 											</Link>
 										</li>
 									)}
 								</ul>
 							)}
-
 						</div>
 					</div>
 				</div>

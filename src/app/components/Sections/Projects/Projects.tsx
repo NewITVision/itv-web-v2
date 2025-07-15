@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@tanstack/react-query';
-import {fetchExchangeRateToUSD, getProjects} from '@services/projects';
+import { fetchExchangeRateToUSD, getProjects } from '@services/projects';
 import { Loading } from '@app/components/Loading';
 import { ProjectRow } from '@app/components/Sections/Projects/ProjectRow';
 import { Message } from '@app/components/Message/Message';
@@ -45,7 +45,11 @@ export const Projects: React.FC = () => {
 			<ol className="projects">
 				{data &&
 					data.map((project: ProjectRowProps) => (
-						<ProjectRow key={`${project.id}-${project.name}`} {...project} usdRate={usdRate} />
+						<ProjectRow
+							key={`${project.id}-${project.name}`}
+							{...project}
+							usdRate={usdRate}
+						/>
 					))}
 			</ol>
 		</>

@@ -18,7 +18,6 @@ function App() {
 				<Navigation activeSection={activeSection} />
 
 				<main>
-
 					<section id="about" ref={refs.aboutRef}>
 						<About />
 					</section>
