@@ -55,12 +55,7 @@ header {
 
 	ul.language-switcher {
 		li {
-			transform: scale(0.8);
 			transition: transform 0.2s linear;
-
-			&.active {
-				transform: scale(1);
-			}
 
 			img {
 				user-select: none;
@@ -280,14 +275,16 @@ main {
 				}
 			}
 
-
 			.project-content {
-				@include mx.flex(row, flex-start, flex-start, $gap: var(--sp-2));
+				width: 100%;
+				@include mx.flex(row, flex-start, center, $gap: var(--sp-4));
 
 				&>div {
 					&:first-child {
 						flex: 0 0 200px;
 						text-align: center;
+						user-select: none;
+						pointer-events: none;
 
 						img {
 							max-width: 200px;
@@ -313,6 +310,7 @@ main {
 
 				&>div {
 					height: 100%;
+					flex: 1;
 
 					h3 {
 						font-size: var(--font-size-xl);
@@ -324,6 +322,35 @@ main {
 						font-weight: var(--font-weight-medium);
 					}
 
+				}
+			}
+
+			.links {
+				@include mx.flex(row, center, center, $gap: var(--sp-2));
+				@include mx.list-reset;
+				padding-top: var(--sp-4);
+
+				li {
+					flex: 1;
+
+					a {
+						background: var(--offer-card-background);
+						border: 1px solid rgba(141, 149, 184, 0.1);
+						display: block;
+						width: 100%;
+						text-align: center;
+						padding: var(--sp-2) var(--sp-3);
+						border-radius: var(--sp-1);
+						font-weight: var(--font-weight-semibold);
+						font-size: var(--font-size-base);
+						transition: all 0.2s ease;
+
+						&:hover {
+							color: var(--very-light-color);
+							background-color: rgba(var(--primary-color-rgb), 0.2);
+							border-color: rgb(var(--primary-color-rgb), 1);
+						}
+					}
 				}
 			}
 		}

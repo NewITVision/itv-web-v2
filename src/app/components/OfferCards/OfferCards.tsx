@@ -251,7 +251,6 @@ const GlobalSpotlight: React.FC<GlobalSpotlightProps> = ({ gridRef }) => {
 		};
 
 		const leave = (): void => {
-			console.log('Mouse left document');
 			isInsideSectionRef.current = false;
 			const cards = gridRef.current?.querySelectorAll(
 				'.offer-card__item',

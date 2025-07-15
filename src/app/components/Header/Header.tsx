@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
 			<div>
 				<a href="#" className="logo">
 					<img
-						src="./images/logo.png"
+						src="./images/logo.webp"
 						alt="Logo NewITVision.pl"
 						width={128}
 						height={135}

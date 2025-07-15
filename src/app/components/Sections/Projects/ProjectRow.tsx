@@ -29,7 +29,7 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 				{tags && tags.length > 0 && (
 					<ul className="tags">
 						{tags.map((tag) => (
-							<li>
+							<li key={tag.id}>
 								<span>{tag.name}</span>
 							</li>
 						))}
@@ -42,7 +42,7 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 							<>
 								<img
 									src={`${import.meta.env.VITE_APP_URL}/${main_image}`}
-									alt={name}
+									alt={name_eng}
 									loading="lazy"
 									onLoad={(e) => (e.currentTarget.style.display = 'block')}
 									onError={() => setIsLoaded(false)}
@@ -67,17 +67,17 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 										<Link to={'/'} target="_blank" rel="nofollow noopener noreferrer">
 											{t('projects.demo')}
 										</Link>
-										{links.product && (
-											<>
-												<Link to={'/'} target="_blank" rel="nofollow noopener noreferrer">
-													{t('projects.product', {
-														amount: i18n.language === 'pl' ? price : usdPrice,
-														currency: i18n.language === 'pl' ? 'zł' : '$'
-													})}
-												</Link>
-											</>
-										)}
 									</li>
+									{links.product && (
+										<li>
+											<Link to={'/'} target="_blank" rel="nofollow noopener noreferrer">
+												{t('projects.product', {
+													amount: i18n.language === 'pl' ? price : usdPrice,
+													currency: i18n.language === 'pl' ? 'zł' : '$'
+												})}
+											</Link>
+										</li>
+									)}
 								</ul>
 							)}
 

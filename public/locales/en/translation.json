@@ -1,8 +1,8 @@
 {
 	"navigation": {
 		"btt": "Back to top",
-		"about": "About",
-		"offer": "Offer",
+		"about": "About us",
+		"offer": "Services",
 		"projects": "Projects"
 	},
 	"social": {
@@ -13,7 +13,27 @@
 	},
 	"hero": {
 		"title": "Who are we?",
-		"content": "We create modern and refined websites that combine aesthetics with high performance. We pay attention to every detail to ensure your site runs fast and looks great on every device. Additionally, we handle VPS and dedicated server configuration and security, providing stability and protection against threats.",
-		"logo_desc": "Front-end, infrastructure, security.\nEverything you need, in one place."
+		"content": "We create modern and polished websites that combine aesthetics with performance. We treat each project individually – we want your website to not only look great, but also work fast and flawlessly on every device. We pay attention to details – from clear layout, through good user experience, to fast loading and SEO readiness. We don't do random solutions – everything is thoughtful and tailored to your needs. Besides websites, we also handle configuration and administration of VPS and dedicated servers. We set everything up to work stably, securely and without the need to dig into the terminal every time something goes wrong. We also create Discord bots and servers.",
+		"logo_desc": "Front-end, infrastructure, security. Everything you need, in one place."
+	},
+	"offer": {
+		"title": "Services",
+
+		"offer_themes_title": "Theme coding for IPS 4 and MyBB",
+		"offer_themes_content": "We specialize in coding and designing minimalist themes for forums based on IPS 4 or MyBB. If you want to refresh the look of your community or build something from scratch, we'll deliver a lightweight, aesthetic and functional theme tailored to your needs. Our themes are not just about good looks – we focus on performance, clarity and user convenience. We take care of every stage: from clean code, through responsiveness, to full forum integration.",
+
+		"offer_web_title": "Website development",
+		"offer_web_content": "We specialize in creating modern, responsive websites with a focus on front-end. We design and code interfaces that not only look good, but are also fast, readable and convenient to use. Whether you need a classic website, an interactive web application or an extensive UI – we have the experience and skills to turn your vision into a functional project. We focus on modern design, smooth animations and polished details that make a difference. Your idea – our code. Simple, efficient and with aesthetics first.",
+		"offer_discord_title": "Discord servers",
+		"offer_discord_content": "We create well-organized Discord servers tailored to your needs – whether for gaming, communities, or collaboration. We'll take care of everything: clear channel structure, readable roles, bot integrations and automations that make management easier and improve user comfort. We have experience in building servers from scratch as well as optimizing existing ones. If you want your server to look professional and work without chaos – we'll handle it for you."
+	},
+	"projects": {
+		"title": "Projects",
+		"demo": "Live preview",
+		"product": "Buy now! ({{amount}} {{currency}})"
+	},
+	"message": {
+		"not_found": "Not found",
+		"is_error": "Error while loading..."
 	}
 }

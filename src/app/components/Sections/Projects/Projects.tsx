@@ -22,7 +22,6 @@ export const Projects: React.FC = () => {
 	// 	return [...data].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
 	// }, [data])
 
-
 	useEffect(() => {
 		async function getRate() {
 			const data = await fetchExchangeRateToUSD();
@@ -46,7 +45,7 @@ export const Projects: React.FC = () => {
 			<ol className="projects">
 				{data &&
 					data.map((project: ProjectRowProps) => (
-						<ProjectRow key={project.id} {...project} usdRate={usdRate} />
+						<ProjectRow key={`${project.id}-${project.name}`} {...project} usdRate={usdRate} />
 					))}
 			</ol>
 		</>

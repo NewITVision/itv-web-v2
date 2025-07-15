@@ -348,11 +348,7 @@ header .theme ul li.active {
   color: var(--link-hover-color);
 }
 header ul.language-switcher li {
-  transform: scale(0.8);
   transition: transform 0.2s linear;
-}
-header ul.language-switcher li.active {
-  transform: scale(1);
 }
 header ul.language-switcher li img {
   user-select: none;
@@ -561,16 +557,19 @@ main .projects > li .tags li span {
   border-radius: var(--sp-10);
 }
 main .projects > li .project-content {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: nowrap;
-  gap: var(--sp-2);
+  gap: var(--sp-4);
 }
 main .projects > li .project-content > div:first-child {
   flex: 0 0 200px;
   text-align: center;
+  user-select: none;
+  pointer-events: none;
 }
 main .projects > li .project-content > div:first-child img {
   max-width: 200px;
@@ -591,6 +590,7 @@ main .projects > li .project-content > div:first-child svg path {
 }
 main .projects > li .project-content > div {
   height: 100%;
+  flex: 1;
 }
 main .projects > li .project-content > div h3 {
   font-size: var(--font-size-xl);
@@ -599,6 +599,38 @@ main .projects > li .project-content > div h3 {
 main .projects > li .project-content > div p {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
+}
+main .projects > li .links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: var(--sp-2);
+  margin: var(--sp-0);
+  padding: var(--sp-0);
+  list-style: none;
+  padding-top: var(--sp-4);
+}
+main .projects > li .links li {
+  flex: 1;
+}
+main .projects > li .links li a {
+  background: var(--offer-card-background);
+  border: 1px solid rgba(141, 149, 184, 0.1);
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--sp-1);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  transition: all 0.2s ease;
+}
+main .projects > li .links li a:hover {
+  color: var(--very-light-color);
+  background-color: rgba(var(--primary-color-rgb), 0.2);
+  border-color: rgb(var(--primary-color-rgb), 1);
 }
 
 .nav {
