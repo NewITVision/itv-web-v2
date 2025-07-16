@@ -30,7 +30,7 @@
 	"projects": {
 		"title": "Projects",
 		"demo": "Preview",
-		"product": "Buy now! ({{amount}}{{currency}})",
+		"product": "Buy now! ({{currency}}{{amount}})",
 		"description": "Description"
 	},
 	"message": {
