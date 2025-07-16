@@ -9,6 +9,14 @@ header {
 	height: calc(100vh - var(--sp-7) - var(--sp-7));
 	text-align: center;
 
+	@include bp.respond-to('desktop') {
+		flex: 0 0 300px;
+	}
+
+	@include bp.respond-to('desktop-sm') {
+		flex: 0 0 280px;
+	}
+
 	@include bp.respond-to('tablet') {
 		position: relative;
 		top: var(--sp-0);
@@ -256,6 +264,7 @@ main {
 		&>li {
 			@include mx.flex(column, flex-start, flex-start, $gap: var(--sp-3));
 			background: rgba(var(--offer-card-background-rgb), 0.25);
+			background-size: cover;
 			border: 1px solid rgba(141, 149, 184, 0.2);
 			border-radius: var(--sp-1);
 			margin-bottom: var(--sp-2);
@@ -290,31 +299,18 @@ main {
 				width: 100%;
 				@include mx.flex(row, flex-start, center, $gap: var(--sp-4));
 
-				@include bp.respond-to('tablet') {
-					flex-wrap: wrap;
-				}
-
 				&>div {
 					&:first-child {
-						flex: 0 0 200px;
+						flex: 0 0 150px;
 						text-align: center;
-						user-select: none;
-						pointer-events: none;
-
-						@include bp.respond-to('tablet') {
-							flex: 1 0 100%;
-						}
 
 						img {
-							max-width: 200px;
-							height: 100%;
-							object-fit: cover;
+							width: 100%;
+							object-fit: contain;
 							margin: var(--sp-0) auto;
 							border-radius: var(--sp-1);
-
-							@include bp.respond-to('tablet') {
-								max-width: 100%;
-							}
+							user-select: none;
+							pointer-events: none;
 						}
 
 						svg {
@@ -349,12 +345,12 @@ main {
 			}
 
 			.links {
-				@include mx.flex(row, center, center, $gap: var(--sp-2));
+				@include mx.flex(row, center, center, wrap, var(--sp-2));
 				@include mx.list-reset;
 				padding-top: var(--sp-4);
 
 				li {
-					flex: 1;
+					flex: 1 1 auto;
 
 					a {
 						background: var(--offer-card-background);
@@ -368,9 +364,15 @@ main {
 						font-size: var(--font-size-base);
 						transition: all 0.2s ease;
 
+						&.buy {
+							color: var(--very-light-color);
+							background-color: rgba(var(--primary-color-rgb), 0.3);
+							border-color: rgb(var(--primary-color-rgb), 0.65);
+						}
+
 						&:hover {
 							color: var(--very-light-color);
-							background-color: rgba(var(--primary-color-rgb), 0.2);
+							background-color: rgba(var(--primary-color-rgb), 0.4);
 							border-color: rgb(var(--primary-color-rgb), 1);
 						}
 					}
@@ -394,7 +396,11 @@ main {
 	z-index: 100;
 
 	@include bp.respond-to('tablet') {
-		width: 90%;
+		width: 410px;
+	}
+
+	@include bp.respond-to('mobile') {
+		width: 95%;
 	}
 
 	li {

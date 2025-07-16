@@ -29,8 +29,9 @@
 	},
 	"projects": {
 		"title": "Projekty",
-		"demo": "Podgląd na żywo",
-		"product": "Kup teraz! ({{amount}} {{currency}})"
+		"demo": "Podgląd",
+		"product": "Kup teraz! ({{amount}}{{currency}})",
+		"description": "Opis"
 	},
 	"message": {
 		"not_found": "Nie znaleziono",

@@ -299,6 +299,16 @@ header {
   height: calc(100vh - var(--sp-7) - var(--sp-7));
   text-align: center;
 }
+@media screen and (max-width: 1280px) {
+  header {
+    flex: 0 0 300px;
+  }
+}
+@media screen and (max-width: 1156px) {
+  header {
+    flex: 0 0 280px;
+  }
+}
 @media screen and (max-width: 979px) {
   header {
     position: relative;
@@ -535,6 +545,7 @@ main .projects > li {
   flex-wrap: nowrap;
   gap: var(--sp-3);
   background: rgba(var(--offer-card-background-rgb), 0.25);
+  background-size: cover;
   border: 1px solid rgba(141, 149, 184, 0.2);
   border-radius: var(--sp-1);
   margin-bottom: var(--sp-2);
@@ -577,33 +588,17 @@ main .projects > li .project-content {
   flex-wrap: nowrap;
   gap: var(--sp-4);
 }
-@media screen and (max-width: 979px) {
-  main .projects > li .project-content {
-    flex-wrap: wrap;
-  }
-}
 main .projects > li .project-content > div:first-child {
-  flex: 0 0 200px;
+  flex: 0 0 150px;
   text-align: center;
-  user-select: none;
-  pointer-events: none;
-}
-@media screen and (max-width: 979px) {
-  main .projects > li .project-content > div:first-child {
-    flex: 1 0 100%;
-  }
 }
 main .projects > li .project-content > div:first-child img {
-  max-width: 200px;
-  height: 100%;
-  object-fit: cover;
+  width: 100%;
+  object-fit: contain;
   margin: var(--sp-0) auto;
   border-radius: var(--sp-1);
-}
-@media screen and (max-width: 979px) {
-  main .projects > li .project-content > div:first-child img {
-    max-width: 100%;
-  }
+  user-select: none;
+  pointer-events: none;
 }
 main .projects > li .project-content > div:first-child svg {
   color: var(--light-color);
@@ -632,7 +627,7 @@ main .projects > li .links {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: var(--sp-2);
   margin: var(--sp-0);
   padding: var(--sp-0);
@@ -640,7 +635,7 @@ main .projects > li .links {
   padding-top: var(--sp-4);
 }
 main .projects > li .links li {
-  flex: 1;
+  flex: 1 1 auto;
 }
 main .projects > li .links li a {
   background: var(--offer-card-background);
@@ -654,9 +649,14 @@ main .projects > li .links li a {
   font-size: var(--font-size-base);
   transition: all 0.2s ease;
 }
+main .projects > li .links li a.buy {
+  color: var(--very-light-color);
+  background-color: rgba(var(--primary-color-rgb), 0.3);
+  border-color: rgb(var(--primary-color-rgb), 0.65);
+}
 main .projects > li .links li a:hover {
   color: var(--very-light-color);
-  background-color: rgba(var(--primary-color-rgb), 0.2);
+  background-color: rgba(var(--primary-color-rgb), 0.4);
   border-color: rgb(var(--primary-color-rgb), 1);
 }
 
@@ -682,7 +682,12 @@ main .projects > li .links li a:hover {
 }
 @media screen and (max-width: 979px) {
   .nav {
-    width: 90%;
+    width: 410px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .nav {
+    width: 95%;
   }
 }
 .nav li a {
@@ -730,6 +735,20 @@ main .projects > li .links li a:hover {
   align-items: flex-start;
   flex-wrap: nowrap;
   gap: var(--sp-10);
+}
+@media screen and (max-width: 1280px) {
+  .container {
+    max-width: 1156px;
+    min-width: 1156px;
+    padding: var(--sp-4) var(--sp-2);
+  }
+}
+@media screen and (max-width: 1156px) {
+  .container {
+    max-width: 1024px;
+    min-width: 1024px;
+    padding: var(--sp-4) var(--sp-2);
+  }
 }
 @media screen and (max-width: 979px) {
   .container {

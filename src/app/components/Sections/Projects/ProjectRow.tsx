@@ -23,6 +23,8 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 
 	const usdPrice = price && usdRate ? (price / usdRate).toFixed(2) : null;
 
+	console.log(links.website);
+
 	return (
 		<>
 			<li>
@@ -46,6 +48,8 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 									loading="lazy"
 									onLoad={(e) => (e.currentTarget.style.display = 'block')}
 									onError={() => setIsLoaded(false)}
+									width={200}
+									height={100}
 								/>
 							</>
 						) : (
@@ -65,7 +69,7 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 								<ul className="links">
 									<li>
 										<Link
-											to={'/'}
+											to={links.website}
 											target="_blank"
 											rel="nofollow noopener noreferrer"
 										>
@@ -75,15 +79,27 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 									{links.product && (
 										<li>
 											<Link
-												to={'/'}
+												to={links.product}
 												target="_blank"
 												rel="nofollow noopener noreferrer"
+												className="buy"
 											>
 												{t('projects.product', {
 													amount:
 														i18n.language === 'pl' ? price : usdPrice,
 													currency: i18n.language === 'pl' ? 'zł' : '$',
 												})}
+											</Link>
+										</li>
+									)}
+									{links.description && (
+										<li>
+											<Link
+												to={links.description}
+												target="_blank"
+												rel="nofollow noopener noreferrer"
+											>
+												{t('projects.description')}
 											</Link>
 										</li>
 									)}

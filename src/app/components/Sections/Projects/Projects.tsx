@@ -8,7 +8,6 @@ import { Message } from '@app/components/Message/Message';
 import { ProjectRowProps } from '@typings/Project';
 
 export const Projects: React.FC = () => {
-	const [usdRate, setUsdRate] = useState<number | null>(null);
 	const { t } = useTranslation();
 
 	const { data, isLoading, isError } = useQuery<any[]>({
@@ -20,17 +19,18 @@ export const Projects: React.FC = () => {
 	// 	if (!data) return [];
 	//
 	// 	return [...data].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
-	// }, [data])
+	// }, [data]);
 
-	useEffect(() => {
-		async function getRate() {
-			const data = await fetchExchangeRateToUSD();
-			if (data !== false && data?.rates?.[0]?.mid) {
-				setUsdRate(data.rates[0].mid);
+	const { data: usdRate } = useQuery({
+		queryKey: ['rate'],
+		queryFn: fetchExchangeRateToUSD,
+		select: (data) => {
+			if (data === false || !data?.rates?.[0]?.mid) {
+				return null;
 			}
-		}
-		getRate();
-	}, []);
+			return data.rates[0].mid;
+		},
+	});
 
 	return (
 		<>
@@ -48,7 +48,7 @@ export const Projects: React.FC = () => {
 						<ProjectRow
 							key={`${project.id}-${project.name}`}
 							{...project}
-							usdRate={usdRate}
+							usdRate={usdRate || null}
 						/>
 					))}
 			</ol>

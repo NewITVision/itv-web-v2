@@ -20,6 +20,18 @@
 	padding: var(--sp-8) var(--sp-9);
 	@include mx.flex($align: flex-start, $gap: var(--sp-10));
 
+	@include bp.respond-to('desktop') {
+		max-width: 1156px;
+		min-width: 1156px;
+		padding: var(--sp-4) var(--sp-2);
+	}
+
+	@include bp.respond-to('desktop-sm') {
+		max-width: 1024px;
+		min-width: 1024px;
+		padding: var(--sp-4) var(--sp-2);
+	}
+
 	@include bp.respond-to('tablet') {
 		max-width: 100%;
 		min-width: 100%;

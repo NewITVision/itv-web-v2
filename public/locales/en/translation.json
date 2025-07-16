@@ -29,8 +29,9 @@
 	},
 	"projects": {
 		"title": "Projects",
-		"demo": "Live preview",
-		"product": "Buy now! ({{amount}} {{currency}})"
+		"demo": "Preview",
+		"product": "Buy now! ({{amount}}{{currency}})",
+		"description": "Description"
 	},
 	"message": {
 		"not_found": "Not found",
