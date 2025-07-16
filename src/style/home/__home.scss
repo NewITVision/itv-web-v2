@@ -1,4 +1,5 @@
 @use '../abstracts/__mixins' as mx;
+@use '../abstracts/__breakpoints' as bp;
 
 header {
 	flex: 0 0 340px;
@@ -7,6 +8,15 @@ header {
 	top: var(--sp-5);
 	height: calc(100vh - var(--sp-7) - var(--sp-7));
 	text-align: center;
+
+	@include bp.respond-to('tablet') {
+		position: relative;
+		top: var(--sp-0);
+		height: auto;
+		flex: 1 0 100%;
+		justify-content: flex-start;
+		gap: var(--sp-6);
+	}
 
 	& > div {
 		width: 100%;
@@ -245,7 +255,7 @@ main {
 
 		&>li {
 			@include mx.flex(column, flex-start, flex-start, $gap: var(--sp-3));
-			//background: var(--offer-card-background);
+			background: rgba(var(--offer-card-background-rgb), 0.25);
 			border: 1px solid rgba(141, 149, 184, 0.2);
 			border-radius: var(--sp-1);
 			margin-bottom: var(--sp-2);
@@ -254,6 +264,7 @@ main {
 			text-align: left;
 			text-decoration: none;
 			transition: all 0.3s ease;
+			backdrop-filter: blur(10px);
 
 			.tags {
 				@include mx.list-reset;
@@ -279,6 +290,10 @@ main {
 				width: 100%;
 				@include mx.flex(row, flex-start, center, $gap: var(--sp-4));
 
+				@include bp.respond-to('tablet') {
+					flex-wrap: wrap;
+				}
+
 				&>div {
 					&:first-child {
 						flex: 0 0 200px;
@@ -286,12 +301,20 @@ main {
 						user-select: none;
 						pointer-events: none;
 
+						@include bp.respond-to('tablet') {
+							flex: 1 0 100%;
+						}
+
 						img {
 							max-width: 200px;
 							height: 100%;
 							object-fit: cover;
 							margin: var(--sp-0) auto;
 							border-radius: var(--sp-1);
+
+							@include bp.respond-to('tablet') {
+								max-width: 100%;
+							}
 						}
 
 						svg {
@@ -367,9 +390,12 @@ main {
 	left: 50%;
 	transform: translateX(-50%);
 	@include mx.flex(row, center, center, $gap: var(--sp-1));
-	@include mx.list-reset;
-	padding: var(--sp-1);
+	@include mx.list-reset($padding: var(--sp-1));
 	z-index: 100;
+
+	@include bp.respond-to('tablet') {
+		width: 90%;
+	}
 
 	li {
 		a {
@@ -381,6 +407,10 @@ main {
 			border-radius: var(--sp-10);
 			padding: var(--sp-1) var(--sp-3);
 			transition: all 0.2s linear;
+
+			@include bp.respond-to('tablet') {
+				font-size: var(--font-size-base);
+			}
 
 			svg {
 				vertical-align: middle;
