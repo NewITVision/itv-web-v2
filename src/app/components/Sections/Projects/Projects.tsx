@@ -44,10 +44,11 @@ export const Projects: React.FC = () => {
 
 			<ol className="projects">
 				{data &&
-					data.map((project: ProjectRowProps) => (
+					data.map((project: ProjectRowProps, index: number) => (
 						<ProjectRow
 							key={`${project.id}-${project.name}`}
 							{...project}
+							index={index}
 							usdRate={usdRate || null}
 						/>
 					))}

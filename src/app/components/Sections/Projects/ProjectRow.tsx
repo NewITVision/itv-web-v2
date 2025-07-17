@@ -3,31 +3,34 @@ import { ProjectRowProps } from '@typings/Project';
 import { ImageMinus } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export const ProjectRow: React.FC<ProjectRowProps> = ({
-	id,
 	name,
 	name_eng,
 	description,
 	description_eng,
-	images,
 	main_image,
 	tags,
 	links,
 	price,
-	created_at,
 	usdRate,
+	index,
 }) => {
 	const [isLoaded, setIsLoaded] = useState<boolean>(true);
 	const { i18n, t } = useTranslation();
 
 	const usdPrice = price && usdRate ? (price / usdRate).toFixed(2) : null;
 
-	console.log(links.website);
-
 	return (
 		<>
-			<li>
+			<motion.li
+				key={index}
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.4 }}
+			>
 				{tags && tags.length > 0 && (
 					<ul className="tags">
 						{tags.map((tag) => (
@@ -108,7 +111,7 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 						</div>
 					</div>
 				</div>
-			</li>
+			</motion.li>
 		</>
 	);
 };

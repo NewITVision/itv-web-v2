@@ -19,4 +19,5 @@ export interface ProjectRowProps {
 	price?: number;
 	created_at?: string;
 	usdRate: number | null;
+	index: number;
 }

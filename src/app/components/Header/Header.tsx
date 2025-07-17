@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useLocalStorage } from '@hooks/useLocalStorage';
 import { SocialMedia } from '@app/components/Header/components/SocialMedia';
-import { Link } from 'react-router-dom';
-import { LanguageSwitcher } from '@app/components/LanguageSwitcher';
+import { LanguageSwitcher } from '@app/components/Header/components/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { Moon, Sun } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export const Header: React.FC = () => {
 	const [theme, setTheme] = useLocalStorage('theme', 'dark');
@@ -15,7 +15,11 @@ export const Header: React.FC = () => {
 	}, [theme]);
 
 	return (
-		<header>
+		<motion.header
+			initial={{ opacity: 0, x: -20 }}
+			animate={{ opacity: 1, x: 0 }}
+			transition={{ duration: 0.4 }}
+		>
 			<div>
 				<a href="#" className="logo">
 					<img
@@ -50,6 +54,6 @@ export const Header: React.FC = () => {
 			</div>
 
 			<SocialMedia />
-		</header>
+		</motion.header>
 	);
 };

@@ -6,6 +6,7 @@ import { About } from '@app/components/Sections/About/About';
 import { Projects } from '@app/components/Sections/Projects/Projects';
 import { Offer } from '@app/components/Sections/Offer/Offer';
 import './compiled/css/index.css';
+import { motion } from 'framer-motion';
 
 function App() {
 	const { activeSection, refs } = useActiveSection();
@@ -18,17 +19,35 @@ function App() {
 				<Navigation activeSection={activeSection} />
 
 				<main>
-					<section id="about" ref={refs.aboutRef}>
+					<motion.section
+						id="about"
+						ref={refs.aboutRef}
+						initial={{ opacity: 0, x: 20 }}
+						animate={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.4 }}
+					>
 						<About />
-					</section>
+					</motion.section>
 
-					<section id="offer" ref={refs.offerRef}>
+					<motion.section
+						id="offer"
+						ref={refs.offerRef}
+						initial={{ opacity: 0, x: 20 }}
+						animate={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.4 }}
+					>
 						<Offer />
-					</section>
+					</motion.section>
 
-					<section id="projects" ref={refs.projectsRef}>
+					<motion.section
+						id="projects"
+						ref={refs.projectsRef}
+						initial={{ opacity: 0, x: 20 }}
+						animate={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.4 }}
+					>
 						<Projects />
-					</section>
+					</motion.section>
 				</main>
 
 				<footer></footer>
