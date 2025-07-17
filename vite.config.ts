@@ -7,17 +7,17 @@ import Sitemap from 'vite-plugin-sitemap';
 // https://vite.dev/config/
 export default defineConfig({
 	plugins: [react(), tsconfigPaths(), Sitemap({ hostname: 'https://newitvision.pl' })],
-	base: "/",
+	base: '/',
 	build: {
-		outDir: "dist",
+		outDir: 'dist',
 		chunkSizeWarningLimit: 1000,
 		rollupOptions: {
 			output: {
 				manualChunks: {
 					react: ['react', 'react-dom', 'react-router-dom'],
-					utils: ['@tanstack/react-query']
-				}
-			}
+					utils: ['@tanstack/react-query'],
+				},
+			},
 		},
 		sourcemap: false,
 		minify: 'terser',
