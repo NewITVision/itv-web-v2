@@ -45,10 +45,24 @@
 }
 
 [data-theme=light] {
-  --body-background: #091018;
-  --body-color: #fafafa;
-  --light-color: #c5deff;
-  --light-color-rgb: 197, 222, 255;
+  --body-background: #f8fafc;
+  --body-color: #1e293b;
+  --primary-color: #2563eb;
+  --primary-color-rgb: 37, 99, 235;
+  --link-hover-color: #2563eb;
+  --link-hover-color-rgb: 37, 99, 235;
+  --light-color: #1a1a20;
+  --light-color-rgb: 26, 26, 32;
+  --offer-card-background: #ebeef3;
+  --offer-card-background-rgb: 235, 238, 243;
+  --message-success: #16a34a;
+  --message-success-rgb: 22, 163, 74;
+  --message-error: #dc2626;
+  --message-error-rgb: 220, 38, 38;
+  --message-warning: #d97706;
+  --message-warning-rgb: 217, 119, 6;
+  --message-info: #2563eb;
+  --message-info-rgb: 37, 99, 235;
 }
 
 *,
@@ -101,6 +115,7 @@ body {
   font-size: var(--font-size-base);
   overflow-wrap: break-word;
   margin: 0;
+  transition: background-color 0.2s linear;
 }
 
 h1,
@@ -721,6 +736,13 @@ main .projects > li .links li a:hover {
   will-change: transform, opacity;
   z-index: 200 !important;
   pointer-events: none;
+}
+
+[data-theme=light] header .logo {
+  filter: invert(0.8);
+}
+[data-theme=light] main .projects > li .links li a.buy {
+  color: rgba(var(--primary-color-rgb), 1);
 }
 
 .container {

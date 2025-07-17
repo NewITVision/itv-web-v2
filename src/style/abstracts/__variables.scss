@@ -27,7 +27,14 @@ $brand-colors: (
 );
 
 $light-colors: (
-	'light-color': #c5deff,
+	'primary-color': #2563eb,
+	'link-hover-color': #2563eb,
+	'light-color': #1a1a20,
+	'offer-card-background': #ebeef3,
+	'message-success': #16a34a,
+	'message-error': #dc2626,
+	'message-warning': #d97706,
+	'message-info': #2563eb,
 );
 
 :root {
@@ -61,8 +68,8 @@ $light-colors: (
 }
 
 [data-theme='light'] {
-	--body-background: #091018;
-	--body-color: #fafafa;
+	--body-background: #f8fafc;
+	--body-color: #1e293b;
 
 	@each $name, $color in $light-colors {
 		--#{$name}: #{$color};
