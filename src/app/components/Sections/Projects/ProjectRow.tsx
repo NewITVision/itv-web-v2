@@ -3,7 +3,6 @@ import { ProjectRowProps } from '@typings/Project';
 import { ImageMinus } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
 export const ProjectRow: React.FC<ProjectRowProps> = ({
 	name,
@@ -24,13 +23,7 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 
 	return (
 		<>
-			<motion.li
-				key={index}
-				initial={{ opacity: 0 }}
-				whileInView={{ opacity: 1 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.4 }}
-			>
+			<li>
 				{tags && tags.length > 0 && (
 					<ul className="tags">
 						{tags.map((tag) => (
@@ -63,9 +56,9 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 					</div>
 
 					<div>
-						<h3>{i18n.language === 'pl' ? name : name_eng}</h3>
+						<h3>{i18n.language === 'pl' ? name : i18n.language === 'en' ? name_eng : name}</h3>
 
-						<p>{i18n.language === 'pl' ? description : description_eng}</p>
+						<p>{i18n.language === 'pl' ? description : i18n.language === 'en' ? description_eng : description}</p>
 
 						<div>
 							{links && (
@@ -111,7 +104,7 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 						</div>
 					</div>
 				</div>
-			</motion.li>
+			</li>
 		</>
 	);
 };

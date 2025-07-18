@@ -603,9 +603,19 @@ main .projects > li .project-content {
   flex-wrap: nowrap;
   gap: var(--sp-4);
 }
+@media screen and (max-width: 550px) {
+  main .projects > li .project-content {
+    flex-wrap: wrap;
+  }
+}
 main .projects > li .project-content > div:first-child {
   flex: 0 0 150px;
   text-align: center;
+}
+@media screen and (max-width: 550px) {
+  main .projects > li .project-content > div:first-child {
+    flex: 1 0 100%;
+  }
 }
 main .projects > li .project-content > div:first-child img {
   width: 100%;
@@ -720,6 +730,11 @@ main .projects > li .links li a:hover {
     font-size: var(--font-size-base);
   }
 }
+@media screen and (max-width: 550px) {
+  .nav li a {
+    padding: var(--sp-1) 10px;
+  }
+}
 .nav li a svg {
   vertical-align: middle;
 }
@@ -762,7 +777,7 @@ main .projects > li .links li a:hover {
   .container {
     max-width: 1156px;
     min-width: 1156px;
-    padding: var(--sp-4) var(--sp-2);
+    padding: var(--sp-4) var(--sp-1);
   }
 }
 @media screen and (max-width: 1156px) {
@@ -776,7 +791,7 @@ main .projects > li .links li a:hover {
   .container {
     max-width: 100%;
     min-width: 100%;
-    padding: var(--sp-4) var(--sp-2);
+    padding: var(--sp-4) var(--sp-1);
     flex-wrap: wrap;
   }
 }

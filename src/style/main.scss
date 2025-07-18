@@ -23,7 +23,7 @@
 	@include bp.respond-to('desktop') {
 		max-width: 1156px;
 		min-width: 1156px;
-		padding: var(--sp-4) var(--sp-2);
+		padding: var(--sp-4) var(--sp-1);
 	}
 
 	@include bp.respond-to('desktop-sm') {
@@ -35,7 +35,7 @@
 	@include bp.respond-to('tablet') {
 		max-width: 100%;
 		min-width: 100%;
-		padding: var(--sp-4) var(--sp-2);
+		padding: var(--sp-4) var(--sp-1);
 		flex-wrap: wrap;
 	}
 

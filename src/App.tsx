@@ -22,8 +22,8 @@ function App() {
 					<motion.section
 						id="about"
 						ref={refs.aboutRef}
-						initial={{ opacity: 0, x: 20 }}
-						animate={{ opacity: 1, x: 0 }}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
 						transition={{ duration: 0.4 }}
 					>
 						<About />
@@ -32,8 +32,8 @@ function App() {
 					<motion.section
 						id="offer"
 						ref={refs.offerRef}
-						initial={{ opacity: 0, x: 20 }}
-						animate={{ opacity: 1, x: 0 }}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
 						transition={{ duration: 0.4 }}
 					>
 						<Offer />
@@ -42,8 +42,8 @@ function App() {
 					<motion.section
 						id="projects"
 						ref={refs.projectsRef}
-						initial={{ opacity: 0, x: 20 }}
-						animate={{ opacity: 1, x: 0 }}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
 						transition={{ duration: 0.4 }}
 					>
 						<Projects />

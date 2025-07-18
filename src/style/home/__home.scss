@@ -299,10 +299,18 @@ main {
 				width: 100%;
 				@include mx.flex(row, flex-start, center, $gap: var(--sp-4));
 
+				@include bp.respond-to('mobile') {
+					flex-wrap: wrap
+				}
+
 				&>div {
 					&:first-child {
 						flex: 0 0 150px;
 						text-align: center;
+
+						@include bp.respond-to('mobile') {
+							flex: 1 0 100%
+						}
 
 						img {
 							width: 100%;
@@ -416,6 +424,10 @@ main {
 
 			@include bp.respond-to('tablet') {
 				font-size: var(--font-size-base);
+			}
+
+			@include bp.respond-to('mobile') {
+				padding: var(--sp-1) 10px;
 			}
 
 			svg {
