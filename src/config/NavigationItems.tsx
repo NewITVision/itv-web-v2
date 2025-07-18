@@ -30,7 +30,7 @@ export const NavigationItems = () => {
 		{
 			icon: <Github />,
 			title: t('social.github'),
-			path: 'https://github.com/NewITVision-pl',
+			path: 'https://github.com/NewITVision',
 		},
 		{
 			icon: <Facebook />,
