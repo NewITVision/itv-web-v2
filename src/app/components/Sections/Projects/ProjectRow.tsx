@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ProjectRowProps } from '@typings/Project';
 import { ImageMinus } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { ProjectRowProps } from '@/types/Project';
 
 export const ProjectRow: React.FC<ProjectRowProps> = ({
 	name,
@@ -56,9 +56,21 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({
 					</div>
 
 					<div>
-						<h3>{i18n.language === 'pl' ? name : i18n.language === 'en' ? name_eng : name}</h3>
+						<h3>
+							{i18n.language === 'pl'
+								? name
+								: i18n.language === 'en'
+									? name_eng
+									: name}
+						</h3>
 
-						<p>{i18n.language === 'pl' ? description : i18n.language === 'en' ? description_eng : description}</p>
+						<p>
+							{i18n.language === 'pl'
+								? description
+								: i18n.language === 'en'
+									? description_eng
+									: description}
+						</p>
 
 						<div>
 							{links && (

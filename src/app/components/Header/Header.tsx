@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { useLocalStorage } from '@hooks/useLocalStorage';
-import { SocialMedia } from '@app/components/Header/components/SocialMedia';
-import { LanguageSwitcher } from '@app/components/Header/components/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLocalStorage } from '@hooks/useLocalStorage';
+import { LanguageSwitcher } from '@components/Header/components/LanguageSwitcher';
+import { SocialMedia } from '@components/Header/components/SocialMedia';
 
 export const Header: React.FC = () => {
 	const [theme, setTheme] = useLocalStorage('theme', 'dark');
@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
 			<div>
 				<a href="#" className="logo">
 					<img
-						src="./images/logo.webp"
+						src="./images/logo.svg"
 						alt="Logo NewITVision.pl"
 						width={128}
 						height={135}

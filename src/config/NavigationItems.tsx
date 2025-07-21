@@ -1,7 +1,7 @@
 import { Github, Facebook, Mail } from 'lucide-react';
 import { Discord } from '@icons/Icons';
 import { useTranslation } from 'react-i18next';
-import { HeaderItem } from '@typings/Header';
+import { HeaderItem } from '@/types/Header';
 
 export const NavigationItems = () => {
 	const { t } = useTranslation();

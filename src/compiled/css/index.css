@@ -383,10 +383,12 @@ header .theme ul li.active {
   color: var(--link-hover-color);
 }
 header ul.language-switcher li {
-  transition: transform 0.2s linear;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  transition: color 0.2s linear;
 }
-header ul.language-switcher li img {
-  user-select: none;
+header ul.language-switcher li.active {
+  color: var(--body-color);
 }
 header .social-media {
   width: 100%;

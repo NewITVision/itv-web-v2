@@ -2,17 +2,14 @@
 	"compilerOptions": {
 		"baseUrl": "./src",
 		"paths": {
+			"@/*": ["./*"],
 			"@app/*": ["./app/*"],
-			"@typings/*": ["./types/*"],
-			"@config/*": ["./config/*"],
-			"@contexts/*": ["./contexts/*"],
-			"@icons/*": ["./icons/*"],
+			"@components/*": ["./app/components/*"],
 			"@hooks/*": ["./hooks/*"],
-			"@utils/*": ["./utils/*"],
+			"@typings/*": ["./typings/*"],
+			"@icons/*": ["./icons/*"],
 			"@services/*": ["./services/*"],
-			"@data/*": ["../data/*"],
-			"@compiled/*": ["compiled/css/*"],
-			"@shared/*": ["shared/*"]
+			"@config/*": ["./config/*"]
 		}
 	},
 	"exclude": ["node_modules"]

@@ -1,11 +1,11 @@
-import { Header } from '@app/components/Header/Header';
-import { Navigation } from '@app/components/Header/components/Navigation';
 import React from 'react';
-import { useActiveSection } from '@hooks/useActiveSection';
-import { About } from '@app/components/Sections/About/About';
-import { Projects } from '@app/components/Sections/Projects/Projects';
-import { Offer } from '@app/components/Sections/Offer/Offer';
 import { motion } from 'framer-motion';
+import { Header } from '@components/Header/Header';
+import { Navigation } from '@components/Header/components/Navigation';
+import { useActiveSection } from '@hooks/useActiveSection';
+import { About } from '@components/Sections/About/About';
+import { Offer } from '@components/Sections/Offer/Offer';
+import { Projects } from '@components/Sections/Projects/Projects';
 import './compiled/css/index.css';
 
 function App() {

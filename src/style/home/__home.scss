@@ -73,10 +73,12 @@ header {
 
 	ul.language-switcher {
 		li {
-			transition: transform 0.2s linear;
+			font-size: var(--font-size-lg);
+			font-weight: var(--font-weight-semibold);
+			transition: color 0.2s linear;
 
-			img {
-				user-select: none;
+			&.active {
+				color: var(--body-color);
 			}
 		}
 	}
